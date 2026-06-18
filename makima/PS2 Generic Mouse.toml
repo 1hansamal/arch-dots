@@ -1,0 +1,7 @@
+[remap]
+#Example of Key => Key(s)
+BTN_RIGHT = ["KEY_LEFTALT", "KEY_RIGHT"]
+BTN_LEFT = ["KEY_LEFTALT", "KEY_LEFT"]
+
+[settings]
+GRAB_DEVICE = "true"

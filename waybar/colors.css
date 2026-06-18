@@ -1,0 +1,94 @@
+/* ── Gruvbox Dark Palette ─────────────────────────────────── */
+/* bg:     #282828  bg0_h:  #1d2021  bg0_s:  #32302f         */
+/* bg1:    #3c3836  bg2:    #504945  bg3:    #665c54          */
+/* bg4:    #7c6f64                                            */
+/* fg:     #ebdbb2  fg1:    #ebdbb2  fg2:    #d5c4a1          */
+/* red:    #cc241d  green:  #98971a  yellow: #d79921          */
+/* blue:   #458588  purple: #b16286  aqua:   #689d6a          */
+/* orange: #d65d0e                                            */
+/* bright variants (+1 shade):                                */
+/* bred:   #fb4934  bgreen: #b8bb26  byellow:#fabd2f          */
+/* bblue:  #83a598  bpurp:  #d3869b  baqua:  #8ec07c          */
+/* borang: #fe8019                                            */
+
+@define-color foreground          #000000;
+@define-color foreground-light    #ebdbb2;
+@define-color background          #000000;
+
+@define-color custom-div   #7c6f64;
+
+/* ── Network ──────────────────────────────────────────────── */
+@define-color network               #458588;
+@define-color network-disabled      #d65d0e;
+@define-color network-disconnected  #d65d0e;
+@define-color network-linked        #98971a;
+@define-color network-ethernet      #83a598;
+@define-color network-wifi          #458588;
+
+/* ── Battery ──────────────────────────────────────────────── */
+@define-color battery             #fabd2f;
+@define-color battery-full        #98971a;
+@define-color battery-plugged     #8ec07c;
+@define-color battery-charging    #458588;
+@define-color battery-discharging #fabd2f;
+@define-color battery-warning     #fe8019;
+@define-color battery-critical    #cc241d;
+
+/* ── Pulseaudio ───────────────────────────────────────────── */
+@define-color pulseaudio                        #458588;
+@define-color pulseaudio-sink                   #83a598;
+@define-color pulseaudio-source                 #8ec07c;
+@define-color pulseaudio-muted                  #7c6f64;
+@define-color pulseaudio-sink-muted             #7c6f64;
+@define-color pulseaudio-source-muted           #7c6f64;
+@define-color pulseaudio-bluetooth              #98971a;
+@define-color pulseaudio-bluetooth-sink         #b8bb26;
+@define-color pulseaudio-bluetooth-source       #d3869b;
+@define-color pulseaudio-bluetooth-muted        #d5c4a1;
+@define-color pulseaudio-bluetooth-sink-muted   #d5c4a1;
+@define-color pulseaudio-bluetooth-source-muted #d5c4a1;
+
+/* ── Window / Clock / Backlight ──────────────────────────── */
+@define-color window              #32302f;
+@define-color clock               #ebdbb2;
+@define-color backlight           #d5c4a1;
+
+/* ── Username ─────────────────────────────────────────────── */
+@define-color username            #d5c4a1;
+
+/* ── Mpris ────────────────────────────────────────────────── */
+@define-color mpris               #689d6a;
+@define-color mpris-playing       #98971a;
+@define-color mpris-paused        #504945;
+
+/* ── Idle Inhibitor ───────────────────────────────────────── */
+@define-color idle-inhibitor             #7c6f64;
+@define-color idle-inhibitor-activated   #fb4934;
+@define-color idle-inhibitor-deactivated #7c6f64;
+
+/* ── Bluetooth ────────────────────────────────────────────── */
+@define-color bluetooth                  #83a598;
+@define-color bluetooth-on               #8ec07c;
+@define-color bluetooth-off              #7c6f64;
+@define-color bluetooth-connected        #458588;
+@define-color bluetooth-disabled         #504945;
+@define-color bluetooth-discoverable     #b16286;
+@define-color bluetooth-discovering      #d3869b;
+@define-color bluetooth-pairable         #689d6a;
+@define-color bluetooth-no-controller    #fb4934;
+
+/* ── Memory ───────────────────────────────────────────────── */
+@define-color memory               #98971a;
+@define-color memory-warning       #fe8019;
+@define-color memory-critical      #cc241d;
+
+/* ── Workspaces ───────────────────────────────────────────── */
+/* @define-color workspaces             #282828; */
+@define-color workspaces-focused     #fabd2f;
+@define-color workspaces-not-focused #7c6f64;
+
+@define-color taskbar              transparent;
+@define-color taskbar-label        #d5c4a1;
+@define-color taskbar-label-active #1d2021;
+@define-color taskbar-active       #83a598;
+@define-color taskbar-not-active   #282828;

@@ -1,0 +1,34 @@
+input {
+    keyboard {
+        xkb {}
+        numlock
+    }
+    touchpad {
+        tap
+        dwt
+        // dwtp
+        // drag false
+        // drag-lock
+        // natural-scroll
+        accel-speed -0.1
+        // accel-profile "flat"
+        scroll-method "two-finger"
+        // disabled-on-external-mouse
+        middle-emulation
+        scroll-factor 0.5
+    }
+
+    mouse {
+        // off
+        // natural-scroll
+        accel-speed -0.1
+        // accel-profile "flat"
+        // scroll-method "no-scroll"
+    }
+
+    trackpoint { off; }
+
+    focus-follows-mouse // max-scroll-amount="50%"
+    disable-power-key-handling
+    workspace-auto-back-and-forth
+}

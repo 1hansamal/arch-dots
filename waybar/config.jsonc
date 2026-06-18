@@ -1,0 +1,49 @@
+{
+  "output": ["LVDS-1", "HDMI-A-3"],
+
+  "name": "MacNotch",
+
+  "layer": "top",
+  "position": "top",
+  // "mode": "dock",
+
+  // "start_hidden": false,
+  // "passthrough": false,
+  // "ipc": false,
+  // "id": ,
+  "reload_style_on_change": true,
+
+  // "width": ,
+  "height": 20,
+  // "margin-<top|left|bottom|right>": ,
+  "spacing": 0,
+  "fixed-center": true,
+
+  "include": ["~/.config/waybar/modules_center.jsonc"],
+
+  // "modules-left": [],
+  "modules-center": [
+    "clock",
+    "custom/div",
+    "niri/workspaces",
+    "custom/div2",
+    "wlr/taskbar",
+    "custom/div",
+    // "niri/window",
+    "network",
+    "bluetooth",
+    "custom/div",
+    "mpris",
+    "pulseaudio#sink",
+    "pulseaudio#source",
+    "custom/div",
+    "battery",
+    "backlight",
+    "memory",
+    "idle_inhibitor",
+    "custom/div",
+    // "tray",
+    "custom/usrname"
+  ]
+  // "modules-right": []
+}

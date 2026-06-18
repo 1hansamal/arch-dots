@@ -1,0 +1,417 @@
+{
+  "clock": {
+    // "interval": 60,
+    
+    "format": "󰥔 {:%I : %M <span font_scale=\"superscript\" rise=\"1.5pt\">%p</span>}",
+    "format-alt": " <span font_scale=\"superscript\" rise=\"1.5pt\">{:%A, %d %b %Y}</span>",
+    // "timezone": "Asia/Colombo"
+    // "timezones": ,
+    // "locale": ,
+
+    // "max-length": ,
+    // "rotate": ,
+
+    // "on-click": ,
+    // "on-click-middle": ,
+    // "on-click-right": ,
+
+    // "on-scroll-up": 
+    // "on-scroll-down": 
+    // "smooth-scrolling-threshold": ,
+
+    "tooltip": false
+    // "tooltip-format": 
+  },
+
+  // "niri/window": {
+  //   // "format": "<span font_scale=\"superscript\" rise=\"1.5pt\">{title}</span>",
+  //   // "rewrite": {},
+    
+  //   "seperate-outputs": true,
+
+  //   "icon": true,
+  //   "icon-size": 12
+  // },
+
+  "niri/workspaces": {
+    "all-outputs": false,
+
+    "format": null,
+    // "format-icons": "",
+
+    // "disable-click": false,
+    // "disable-markup": false,
+    "hide-empty": true,
+    // "on-update": ,
+  },
+
+  "network": {
+    // "interface":
+    "interval": 60,
+    "family": "ipv4",
+    
+    "format": "󰤩",
+    "format-ethernet": "{icon}",
+    "format-wifi": "{icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{essid}</span>",
+    "format-linked": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon} <span font_scale=\"superscript\" rise=\"1.5pt\">Flight Mode</span>",
+    // "format-alt": "<span font_scale=\"superscript\" rise=\"1.5pt\">Flight Mode</span>{bandwidthTotalBytes}",
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "",
+      "linked": "",
+      "disconnected": "󰤭",
+      "disabled": ""
+    },
+    
+    // "rotate":
+    "max-length": 30,
+    
+    // "on-click": ,
+    // "on-click-middle":
+    // "on-click-right": "foot nmtui",
+    
+    // "on-scroll-up":
+    // "on-scroll-down":
+    // "smooth-scrolling-threshold":
+
+    "tooltip": true,
+    "tooltip-format": "",
+    "tooltip-format-ethernet": "",
+    "tooltip-format-wifi": "",
+    "tooltip-format-disconnected": "",
+    "tooltip-format-disabled": ""
+  },
+
+  "battery": {
+    "bat":      "BAT0",
+    "adapter":  "AC",
+
+    // "design-capacity": false,
+    "full-at":  100,
+    "interval": 60,
+
+    "states": {"warning":  20, "critical": 10},
+    
+    "format":                       "{icon} {capacity}",
+    "format-charging":              " {capacity}",
+    "format-plugged":               " <span font_scale=\"superscript\" rise=\"1.5pt\">Plugged</span>",
+    "format-full":                  "󱟢 <span font_scale=\"superscript\" rise=\"1.5pt\">Full</span>",
+    "format-discharging":           "{icon} {capacity}",
+    "format-discharging-warning":   "󰁻 <span font_scale=\"superscript\" rise=\"1.5pt\">Low Battery!</span>",
+    "format-discharging-critical":  "󰂎 <span font_scale=\"superscript\" rise=\"1.5pt\">Charge Now!!</span>",
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-time":                  "{H}h {M}min",
+
+    // "tooltip": true,
+    "tooltip-format":           "{timeTo}",
+    "tooltip-format-charging":  "{timeTo}",
+
+    "on-click": "",
+    "events": {
+      "on-discharging-warning":   "~/.config/notifications/scripts/battery.sh warning",
+      "on-discharging-critical":  "~/.config/notifications/scripts/battery.sh critical",
+      "on-charging-100":          "~/.config/notifications/scripts/battery.sh full"
+    }
+  },
+
+  "pulseaudio#sink": {
+    "format":               "{icon} {volume}",
+    "format-bluetooth":     "{icon} {volume}",
+    "format-muted":         " <span font_scale=\"superscript\" rise=\"1.5pt\">On Mute</span>",
+
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "󰏳",
+        "portable": "󰦢",
+        "car": "󰄍",
+        // "speaker": "󰦢",
+        "hdmi": "󰡁",
+        "hifi": "󰗅",
+
+        "default": ["", ""]
+    },
+
+    // "states": {
+    //     "low": 30,
+    //     "medium": 70,
+    //     "high": 100
+    // },
+    "max-volume": 100,
+
+    // "rotate": 0,
+    // "max-length": 20,
+
+    "on-click": "~/.config/notifications/scripts/volume.sh output mute",
+    // "on-click-middle": "",
+    "on-click-right": "pavucontrol",
+
+    "on-scroll-up": "~/.config/notifications/scripts/volume.sh output raise",
+    "on-scroll-down": "~/.config/notifications/scripts/volume.sh output lower",
+    // "scroll-step": 5,
+    "smooth-scrolling-threshold": 1,
+    // "reverse-scrolling": false,
+    // "reverse-mouse-scrolling": false,
+
+    "tooltip": true,
+    "tooltip-format": "{desc}",
+
+    // "ignored-sinks": [
+    //     "Easy Effects Sink"
+    // ]
+  },
+  "pulseaudio#source": {
+    "format": "{format_source}",
+    "format-source": " {volume}",
+    "format-source-muted": " <span font_scale=\"superscript\" rise=\"1.5pt\">On Mute</span>",
+
+    "on-click": "~/.config/notifications/scripts/volume.sh input mute",
+    "on-click-right": "pavucontrol",
+
+    "on-scroll-up": "~/.config/notifications/scripts/volume.sh input raise",
+    "on-scroll-down": "~/.config/notifications/scripts/volume.sh input lower",
+    "scroll-step": "2",
+    "smooth-scrolling-threshold": 2,
+    
+    "tooltip-format": "{desc}"
+  },
+
+  "backlight": {
+    // "interval": ,
+    
+    "format": "{icon} {percent}",
+    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    
+    // "max-length": 20,
+    // "rotate": 0,
+    
+    // "states": {
+    //     "low": 25,
+    //     "medium": 50,
+    //     "high": 75
+    // },
+    
+    "on-click": "sunsetr -b",
+    // "on-click-middle": "",
+    "on-click-right": "sunsetr stop",
+    
+    "on-scroll-up": "~/.local/bin/backlight.sh up",
+    "on-scroll-down": "~/.local/bin/backlight.sh down",
+    // "smooth-scrolling-threshold": 1.0,
+    // "reverse-scrolling": false,
+    // "reverse-mouse-scrolling": false,
+    // "scroll-step": 1.0,
+    
+    "tooltip": false,
+    // "tooltip-format": "{percent}%"
+  },
+
+  "mpris": {
+    "player": "playerctld",
+    // "ignored-players": ["firefox"],
+    
+    // "interval": 30,
+    
+    "format": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-playing": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-paused": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-stopped": "󰲸",
+    
+    "tooltip-format": "{player} - {status}\n󰲸 {artist} - {title}",
+    "tooltip-format-playing": "{player}\n󰲸 {artist} - {title}",
+    "tooltip-format-paused": "{player} (paused)\n󰲸 {artist} - {title}",
+    "tooltip-format-stopped": "No media playing",
+    "enable-tooltip-len-limits": false,
+    
+    "on-click": "playerctl play-pause",
+    // "on-click-middle": "playerctl previous",
+    // "on-click-right": "playerctl next",
+    
+    // "player-icons": {
+    //     "default": "▶",
+    //     "mpv": "🎵",
+    //     "spotify": "",
+    //     "chromium": ""
+    // },
+    
+    "status-icons": {
+        "playing": "󰲸",
+        "paused": "",
+        "stopped": ""
+    },
+    
+    "dynamic-order": ["title", "artist"],
+    "dynamic-importance-order": ["title", "artist"],
+    "dynamic-len": 40,
+    "dynamic-separator": " / ",
+    
+    "title-len": 25,
+    "artist-len": 15,
+    "ellipsis": "",
+    
+    // "rotate": 0
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": " <span font_scale=\"superscript\" rise=\"1.5pt\">No Sleep</span>",
+        "deactivated": ""
+    },
+
+    // "rotate": 0,
+    // "max-length": 20,
+    
+    // "on-click": "",
+    // "on-click-middle": "",
+    // "on-click-right": "",
+    // "on-scroll-up": "",
+    // "on-scroll-down": "",
+    // "smooth-scrolling-threshold": 1.0,
+    
+    "tooltip": true,
+    "tooltip-format-activated": "Idle inhibitor active",
+    "tooltip-format-deactivated": "Idle inhibitor inactive",
+    
+    // "start-activated": false,
+    
+    "timeout": 30
+},
+
+  "bluetooth": {
+    // "controller": "",
+    
+    // "format-device-preference": [],
+    "format": "{status}",
+    "format-disabled": "",
+    "format-off": "󰂲 <span font_scale=\"superscript\" rise=\"1.5pt\">Off</span>",
+    "format-on": "󰂯 <span font_scale=\"superscript\" rise=\"1.5pt\">On</span>",
+    "format-connected": "󰂱 <span font_scale=\"superscript\" rise=\"1.5pt\">{device_alias}</span>",
+    "format-connected-battery": "󰂱 <span font_scale=\"superscript\" rise=\"1.5pt\">{device_alias} / 󰥈 {device_battery_percentage}%</span>",
+    "format-no-controller": "<span font_scale=\"superscript\" rise=\"1.5pt\">No Controller</span>",
+    
+    // "rotate": 0,
+    "max-length": 20,
+    // "min-length": 0,
+    // "align": 0.0,
+    
+    "on-click": "~/.config/notifications/scripts/bluetooth.sh",
+    // "on-click-middle": "",
+    "on-click-right": "foot bluetui",
+    
+    // "on-scroll-up": "",
+    // "on-scroll-down": "",
+    // "smooth-scrolling-threshold": 1.0,
+    
+    "tooltip": true,
+    "tooltip-format": "{controller_alias}\t{num_connections} connected",
+    "tooltip-format-disabled": "Bluetooth disabled",
+    "tooltip-format-off": "Bluetooth off",
+    "tooltip-format-on": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\t{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-connected-battery": "{controller_alias}\t{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}t{device_battery_percentage}%"
+  },
+
+  // "tray": {
+  //   "icon-size": 16,
+  //   "show-passive-items": false,
+  //   "smooth-scrolling-threshold": 1.0,
+  //   "spacing": 8,
+  //   "reverse-direction": false,
+  //   "icons": {
+  //       "nm-applet": "",
+  //       "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+  //   }
+  // },
+
+  "memory": {
+    "interval": 60,
+    
+    "format": "󰍛 {percentage}",
+    "format-warning": "󰍛 {percentage} <span font_scale=\"superscript\" rise=\"1.5pt\">Warning!</span>",
+    "format-critical": "󰍛 {percentage} <span font_scale=\"superscript\" rise=\"1.5pt\">Critical!!</span>",
+
+    // "rotate": 0,
+    
+    "states": {
+        "warning": 70,
+        "critical": 90
+    },
+    
+    // "max-length": 20,
+    
+    // "on-click": "",
+    // "on-click-middle": "",
+    "on-click-right": "foot btop",
+    
+    // "on-scroll-up": "",
+    // "on-scroll-down": "",
+    // "smooth-scrolling-threshold": 1.0,
+    
+    "tooltip": true,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
+  },
+
+  "wlr/taskbar": {
+    // "all-outputs": false,
+    // "active-first": false,
+    "sort-by-app-id": true,
+
+    "markup": true,
+    "format": "{app_id}",
+    
+    // "icon-size": 10,
+    // "icon-theme": "Dark",
+    
+    "tooltip-format": "{title}",
+    
+    "on-click": "activate",
+    // "on-click-middle": "close",
+    
+    // "ignore-list": ["Alacritty"],
+    "app_ids-mapping": {
+      "google-chrome": "",
+      "chromium": "",
+      "sublime_text":"",
+      "foot": "󰽒",
+      "waybar": "󰰮",
+      "thunar": "",
+      "Thunar": "",
+      "rstudio": "",
+      "code": "",
+      "vlc": "󰕼",
+      "texstudio": "",
+      "org.pwmt.zathura": "",
+      "xarchiver": "",
+      "positron": "",
+      "codium": ""
+    },
+    // "rewrite": {
+    //     "Firefox Web Browser": "Firefox",
+    //     "Foot Server": "Terminal",
+    //     ".*(steam_app_[0-9]+).*": "Game"
+
+    // }
+  },
+
+  "custom/div": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/div2": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/usrname": {
+    "format": " <span font_scale=\"superscript\" rise=\"1.5pt\">iHansamal</span>",
+    "tooltip": false,
+    "on-click-right": "~/.config/rofi/powermenu/type-1/powermenu.sh"
+  },
+}

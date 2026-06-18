@@ -1,0 +1,32 @@
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/scr_%Y-%m-%d_%H-%M-%S.png"
+
+hotkey-overlay { skip-at-startup; }
+
+layer-rule {
+    match namespace="waybar"
+    place-within-backdrop true
+}
+
+overview {
+    zoom 0.5
+    backdrop-color "#000000"
+
+    workspace-shadow { off; }
+}
+
+switch-events { lid-close { spawn "systemctl" "suspend"; }; }
+
+include "startup.kdl"
+include "input.kdl"
+include "outputs.kdl"
+include "windowrules.kdl"
+include "animations.kdl"
+include "layout.kdl"
+include "binds.kdl"
+
+environment {}
+cursor { xcursor-size 16; }
+blur { off; }

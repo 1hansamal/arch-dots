@@ -1,0 +1,6 @@
+lock 'hyprlock -q'
+before-sleep 'hyprlock -q'
+timeout 180 'brightnessctl -q -s set 1' resume 'brightnessctl -q -r'
+timeout 300 'niri msg action do-screen-transition --delay-ms 300; hyprlock -q & disown'
+timeout 480 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors'
+timeout 600 'systemctl suspend'

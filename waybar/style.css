@@ -1,0 +1,195 @@
+@import "colors.css";
+
+* {
+  all: unset;
+
+  font-family:    "Google Sans Flex", "Ubuntu Nerd Font Propo";
+  /* font-stretch:   ultra-condensed; */
+
+}
+
+#waybar .modules-center {
+  background:     @background;
+  
+  padding:        1px 40px;
+  border-radius:  0px 0px 20px 20px;
+}
+
+tooltip {
+  color: @foreground-light;
+  background-color: alpha(black, 0.75);
+
+  font-size:      10pt;
+
+  border-radius: 8px;
+}
+tooltip > box {
+  padding: 5px 10px;
+}
+
+#network,
+#battery,
+#clock,
+/* #workspaces, */
+#window,
+#pulseaudio,
+#backlight,
+/* #taskbar, */
+/* #mpris, */
+#mpris.playing,
+#mpris.paused,
+#idle_inhibitor,
+#bluetooth,
+#memory,
+#custom-usrname {
+  margin:         3px 2px 3px 2px;
+  padding:        0px 8px;
+  border-radius:  10px;
+  /* box-shadow: 3px; */
+
+  color: @foreground;
+  /* opacity: 0.75; */
+
+  font-size:      12pt;
+  font-weight:    600;
+  
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+#custom-div2,
+#custom-div {
+  color:        @custom-div;
+  padding:      0px 4px;
+}
+
+#network                  {background: @network;}
+#network.disabled         {background: @network-disabled;}
+#network.disconnected     {background: @network-disconnected;}
+#network.linked           {background: @network-linked;}
+#network.ethernet         {background: @network-ethernet;}
+#network.wifi             {background: @network-wifi;}
+
+#battery                      {background: @battery;}
+#battery.full                 {background: @battery-full;}
+#battery.plugged              {background: @battery-plugged;}
+#battery.charging             {background: @battery-charging;}
+#battery.discharging          {background: @battery-discharging;}
+#battery.discharging.warning  {background: @battery-warning;}
+#battery.discharging.critical {background: @battery-critical;}
+
+#pulseaudio                           {background: @pulseaudio;}
+#pulseaudio.sink                      {background: @pulseaudio-sink;}
+#pulseaudio.source                    {background: @pulseaudio-source;}
+/* #pulseaudio.muted                     {background: @pulseaudio-muted;} */
+#pulseaudio.sink.sink-muted                   {background: @pulseaudio-sink-muted;}
+#pulseaudio.source.source-muted               {background: @pulseaudio-source-muted;}
+#pulseaudio.bluetooth                         {background: @pulseaudio-bluetooth;}
+#pulseaudio.sink.bluetooth.sink               {background: @pulseaudio-bluetooth-sink;}
+#pulseaudio.source.bluetooth.source           {background: @pulseaudio-bluetooth-source;}
+#pulseaudio.bluetooth.muted                   {background: @pulseaudio-bluetooth-muted;}
+#pulseaudio.sink.bluetooth.sink-muted         {background: @pulseaudio-bluetooth-sink-muted;}
+#pulseaudio.source.bluetooth.source-muted     {background: @pulseaudio-bluetooth-source-muted;}
+
+#window         {background: @window;}
+#clock          {background: @clock; font-weight: 900;}
+#backlight      {background: @backlight;}
+#custom-usrname {background: @username;}
+
+/* #mpris          {background: @mpris;} */
+#mpris.playing  {background: @mpris-playing;}
+#mpris.paused   {background: @mpris-paused;}
+
+#idle_inhibitor             {background: @idle-inhibitor;}
+#idle_inhibitor.activated   {background: @idle-inhibitor-activated;}
+#idle_inhibitor.deactivated {background: @idle-inhibitor-deactivated;}
+
+#bluetooth                {background: @bluetooth;}
+#bluetooth.on             {background: @bluetooth-on;}
+#bluetooth.off            {background: @bluetooth-off;}
+#bluetooth.connected      {background: @bluetooth-connected;}
+#bluetooth.disabled       {background: @bluetooth-disabled;}
+#bluetooth.discoverable   {background: @bluetooth-discoverable;}
+#bluetooth.discovering    {background: @bluetooth-discoverind;}
+#bluetooth.pairable       {background: @bluetooth-pairable;}
+#bluetooth.no-controller  {background: @bluetooth-no-controller;}
+
+#memory           {background: @memory;}
+#memory.warning   {background: @memory-warning;}
+#memory.critical  {background: @memory-critical;}
+
+/* #taskbar
+#taskbar button
+#taskbar button.active
+#taskbar button.minimized
+#taskbar button.maximized
+#taskbar button.fullscreen
+#taskbar.empty */
+
+#taskbar {
+  color: @taskbar-label;
+  background: @taskbar;
+
+  /* margin:         3px; */
+  padding:        0px 2px;
+  border-radius:  20px;
+
+  font-size: 12pt;
+}
+#taskbar button:not(.active) {
+  /* color: @taskbar-not-focused; */
+  /* background: @taskbar-not-active; */
+
+  margin:         3px 2px;
+  padding:        0px 3px;
+  border-radius:  20px;
+
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+#taskbar button.active {
+  color: @taskbar-label-active;
+  background: @taskbar-active;
+
+  margin:         3px 2px;
+  padding:        0px 5px;
+  border-radius:  20px;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+#workspaces {
+  background:     @workspaces;
+
+  font-size:      7pt;
+  
+  margin:         3px 0px;
+  padding:        0px 5px;
+  border-radius:  20px;
+}
+#workspaces button.active label,
+#workspaces button.focused label {
+  color:      @workspaces-focused;
+  background: @workspaces-focused;
+
+  margin:         3px 2px;
+  padding:        0px 12px;
+  border-radius:  20px;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+#workspaces button:not(.focused) label,
+#workspaces button.empty:not(.focused) label {
+  color:      @workspaces-not-focused;  
+  background: @workspaces-not-focused;
+
+  margin:         3px 2px;
+  padding:        0px 4px;
+  border-radius:  20px;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}

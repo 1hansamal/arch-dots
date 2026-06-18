@@ -1,0 +1,9 @@
+animations {
+    window-open                 { curve "ease-out-expo"; }
+    window-close                { curve "ease-out-expo"; }
+    window-movement             { curve "ease-out-expo"; }
+    window-resize               { curve "ease-out-expo"; }
+    horizontal-view-movement    { curve "ease-out-expo"; }
+    workspace-switch            { curve "ease-out-expo"; }
+    overview-open-close         { curve "ease-out-expo"; }
+}
