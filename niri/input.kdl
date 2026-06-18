@@ -1,6 +1,6 @@
 input {
     keyboard {
-        xkb {}
+        xkb { options "caps:return"; }
         numlock
     }
     touchpad {
