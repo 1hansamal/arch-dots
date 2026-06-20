@@ -10,14 +10,14 @@ binds {
     Scroll_Lock         { spawn-sh "pkill -SIGUSR1 waybar"; }
     Ctrl+Scroll_Lock    { spawn-sh "pkill -SIGUSR2 waybar"; }
 
-    // XF86AudioRaiseVolume   { spawn-sh "~/.config/usrscripts/volume.sh up"; }
-    // XF86AudioLowerVolume   { spawn-sh "~/.config/usrscripts/volume.sh down"; }
-    // XF86AudioMute          { spawn-sh "~/.config/usrscripts/volume.sh sink-mute"; }
-    // XF86AudioMicMute       { spawn-sh "~/.config/usrscripts/volume.sh source-mute"; }
-    XF86MonBrightnessUp    { spawn-sh ".config/usrscripts/backlight.sh up"; }
-    XF86MonBrightnessDown  { spawn-sh ".config/usrscripts/backlight.sh down"; }
+    XF86AudioRaiseVolume   { spawn-sh "~/.config/usrscripts/volume.sh output raise 2"; }
+    XF86AudioLowerVolume   { spawn-sh "~/.config/usrscripts/volume.sh output lower 2"; }
+    XF86AudioMute          { spawn-sh "~/.config/usrscripts/volume.sh output mute"; }
+    XF86AudioMicMute       { spawn-sh "~/.config/usrscripts/volume.sh input mute"; }
+    XF86MonBrightnessUp    { spawn-sh "~/.config/usrscripts/backlight.sh up"; }
+    XF86MonBrightnessDown  { spawn-sh "~/.config/usrscripts/backlight.sh down"; }
     XF86Display            { spawn-sh "~/.config/usrscripts/ext_monitor.sh"; }
-    // XF86HomePage           { spawn-sh "chromium & disown"; }
+    XF86HomePage           { spawn "chromium"; }
 
     Mod+TouchpadScrollDown  cooldown-ms=200 { focus-workspace-up; }
     Mod+TouchpadScrollUp    cooldown-ms=200 { focus-workspace-down; }
