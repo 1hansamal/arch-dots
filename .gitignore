@@ -1,3 +1,4 @@
+assets
 btop
 chromium
 dconf
@@ -5,10 +6,15 @@ gh
 go
 gtk-3.0
 gtk-4.0
+menus
+mimeapps.list
 nautilus
 nwg-look
+pulse
+R
 rstudio
 sublime-text
+sublime-merge
 Thunar
 user-dirs.dirs
 user-dirs.locale
