@@ -5,6 +5,7 @@ binds {
     Mod+E       { spawn "thunar"; }
     Mod+Space   { spawn "fuzzel"; }
     Mod+Escape  { spawn-sh "hyprlock -q & disown"; }
+    Mod+Shift+W { spawn-sh "~/.config/usrscripts/wallpaper.sh"; }
 
     Scroll_Lock         { spawn-sh "pkill -SIGUSR1 waybar"; }
     Ctrl+Scroll_Lock    { spawn-sh "pkill -SIGUSR2 waybar"; }
