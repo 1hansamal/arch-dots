@@ -17,8 +17,8 @@ default-timeout=1000
 format=<b>%s</b>\n%b
 
 
-[app-name=brightnessctl]
-font=Google Sans Flex Black 10
+[app-name=brightnessctl app-name=pactl]
+font=monospace 10
 background-color=#e9edc9
 text-color=#0d1b2a
 height=50
@@ -27,4 +27,4 @@ border-radius=10
 progress-color=#606c38
 border-color=#ccd5ae
 text-alignment=center
-default-timeout=500
+default-timeout=1000
