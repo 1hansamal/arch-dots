@@ -31,7 +31,9 @@ check_HDMI ()
 
 docked_mode ()
 {
-	display "$LVDS" off
+	[[ $LVDS_enabled == 'enabled' ]] && display $LVDS off
+	[[ $HDMI_enabled != 'enabled' ]] && display $HDMI on
+	
 	notify-send --app-name=monitorctl --replace-id=99903 \
 				'Docked Mode Enabled' 'externnal display is now primary'
 	echo 'docked' > $status_file
