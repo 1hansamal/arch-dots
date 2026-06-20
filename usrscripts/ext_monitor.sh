@@ -23,7 +23,8 @@ mode_menu ()
 check_HDMI ()
 {
 	if [[ $HDMI_status != 'connected' ]]; then
-		notify-send 'Cable Not Connected' 'connect your monitor cable'
+		notify-send --app-name=monitorctl --replace-id=99903 \
+					'Cable Not Connected' 'connect your monitor cable'
 		exit 0
 	fi
 }
@@ -31,7 +32,8 @@ check_HDMI ()
 docked_mode ()
 {
 	display "$LVDS" off
-	notify-send 'Docked Mode Enabled' 'externnal display is now primary'
+	notify-send --app-name=monitorctl --replace-id=99903 \
+				'Docked Mode Enabled' 'externnal display is now primary'
 	echo 'docked' > $status_file
 	exit 0
 }
@@ -40,7 +42,9 @@ default_mode ()
 {
 	[[ $LVDS_enabled != 'enabled' ]] && display $LVDS on
 	[[ $HDMI_enabled == 'enabled' ]] && display $HDMI off
-	notify-send 'Default Mode Enabled' 'External Display Disabled'
+
+	notify-send --app-name=monitorctl --replace-id=99903 \
+				'Default Mode Enabled' 'External Display Disabled'
 	echo 'default' > $status_file
 	exit 0
 }
@@ -83,7 +87,8 @@ extend_mode()
             ;;
     esac
 
-    notify-send 'Extended Mode Enabled' "extended to the $notify_position"
+    notify-send --app-name=monitorctl --replace-id=99903 \
+    			'Extended Mode Enabled' "extended to the $notify_position"
     echo 'extended' > $status_file
     exit 0
 }
