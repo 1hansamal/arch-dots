@@ -198,8 +198,8 @@
     // "on-click-middle": "",
     "on-click-right": "sunsetr stop",
     
-    "on-scroll-up": "~/.local/bin/backlight.sh up",
-    "on-scroll-down": "~/.local/bin/backlight.sh down",
+    "on-scroll-up": "~/.config/usrscripts/backlight.sh up",
+    "on-scroll-down": "~/.config/usrscripts/backlight.sh down",
     // "smooth-scrolling-threshold": 1.0,
     // "reverse-scrolling": false,
     // "reverse-mouse-scrolling": false,
