@@ -15,7 +15,7 @@ binds {
     // XF86AudioMicMute       { spawn-sh "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; }
     // XF86MonBrightnessUp    { spawn-sh "~/.local/bin/backlight.sh up"; }
     // XF86MonBrightnessDown  { spawn-sh "~/.local/bin/backlight.sh down"; }
-    // XF86Display            { spawn-sh "~/.config/niri/scripts/switchDisplay.sh"; }
+    XF86Display            { spawn-sh "~/.config/usrscripts/ext_monitor.sh"; }
     // XF86HomePage           { spawn-sh "chromium & disown"; }
 
     Mod+TouchpadScrollDown  cooldown-ms=200 { focus-workspace-up; }
