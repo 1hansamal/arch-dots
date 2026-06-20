@@ -16,9 +16,7 @@ default-timeout=1500
 default-timeout=1000
 format=<b>%s</b>\n%b
 
-
-[app-name=brightnessctl app-name=pactl]
-font=monospace 10
+[app-name=brightnessctl]
 background-color=#e9edc9
 text-color=#0d1b2a
 height=50
@@ -28,3 +26,25 @@ progress-color=#606c38
 border-color=#ccd5ae
 text-alignment=center
 default-timeout=1000
+
+[app-name=pactl]
+background-color=#e9edc9
+text-color=#0d1b2a
+height=50
+padding=5,5
+border-radius=10
+progress-color=#606c38
+border-color=#ccd5ae
+text-alignment=center
+default-timeout=1000
+
+[app-name=monitorctl]
+background-color=#e9edc9
+text-color=#0d1b2a
+height=50
+padding=5,5
+border-radius=10
+progress-color=#606c38
+border-color=#ccd5ae
+text-alignment=left
+default-timeout=2000
