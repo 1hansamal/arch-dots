@@ -10,12 +10,12 @@ binds {
     Scroll_Lock         { spawn-sh "pkill -SIGUSR1 waybar"; }
     Ctrl+Scroll_Lock    { spawn-sh "pkill -SIGUSR2 waybar"; }
 
-    // XF86AudioRaiseVolume   { spawn-sh "~/.local/bin/volume.sh up"; }
-    // XF86AudioLowerVolume   { spawn-sh "~/.local/bin/volume.sh down"; }
-    // XF86AudioMute          { spawn-sh "~/.local/bin/volume.sh mute"; }
-    // XF86AudioMicMute       { spawn-sh "pactl set-source-mute @DEFAULT_SOURCE@ toggle"; }
-    // XF86MonBrightnessUp    { spawn-sh "~/.local/bin/backlight.sh up"; }
-    // XF86MonBrightnessDown  { spawn-sh "~/.local/bin/backlight.sh down"; }
+    // XF86AudioRaiseVolume   { spawn-sh "~/.config/usrscripts/volume.sh up"; }
+    // XF86AudioLowerVolume   { spawn-sh "~/.config/usrscripts/volume.sh down"; }
+    // XF86AudioMute          { spawn-sh "~/.config/usrscripts/volume.sh sink-mute"; }
+    // XF86AudioMicMute       { spawn-sh "~/.config/usrscripts/volume.sh source-mute"; }
+    XF86MonBrightnessUp    { spawn-sh ".config/usrscripts/backlight.sh up"; }
+    XF86MonBrightnessDown  { spawn-sh ".config/usrscripts/backlight.sh down"; }
     XF86Display            { spawn-sh "~/.config/usrscripts/ext_monitor.sh"; }
     // XF86HomePage           { spawn-sh "chromium & disown"; }
 
