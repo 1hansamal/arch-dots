@@ -1,0 +1,8 @@
+# this is the custom user udev rule file for ihansamal
+
+#------ power supply notification
+
+ACTION=="change", KERNEL=="AC", SUBSYSTEM=="power_supply", ATTRS{type}=="Mains", ATTRS{online}=="1", RUN+="/usr/bin/su ihansamal -c '/home/ihansamal/.config/usrscripts/power_supply.sh'"
+ACTION=="change", KERNEL=="AC", SUBSYSTEM=="power_supply", ATTRS{type}=="Mains", ATTRS{online}=="0", RUN+="/usr/bin/su ihansamal -c '/home/ihansamal/.config/usrscripts/power_supply.sh'"
+
+#------
