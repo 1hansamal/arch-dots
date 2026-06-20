@@ -145,12 +145,12 @@
     // "rotate": 0,
     // "max-length": 20,
 
-    "on-click": "~/.config/notifications/scripts/volume.sh output mute",
+    "on-click": "~/.config/usrscripts/volume.sh output mute",
     // "on-click-middle": "",
     "on-click-right": "pavucontrol",
 
-    "on-scroll-up": "~/.config/notifications/scripts/volume.sh output raise",
-    "on-scroll-down": "~/.config/notifications/scripts/volume.sh output lower",
+    "on-scroll-up": "~/.config/usrscripts/volume.sh output raise 2",
+    "on-scroll-down": "~/.config/usrscripts/volume.sh output lower 2",
     // "scroll-step": 5,
     "smooth-scrolling-threshold": 1,
     // "reverse-scrolling": false,
@@ -168,11 +168,11 @@
     "format-source": " {volume}",
     "format-source-muted": " <span font_scale=\"superscript\" rise=\"1.5pt\">On Mute</span>",
 
-    "on-click": "~/.config/notifications/scripts/volume.sh input mute",
+    "on-click": "~/.config/usrscripts/volume.sh input mute",
     "on-click-right": "pavucontrol",
 
-    "on-scroll-up": "~/.config/notifications/scripts/volume.sh input raise",
-    "on-scroll-down": "~/.config/notifications/scripts/volume.sh input lower",
+    "on-scroll-up": "~/.config/usrscripts/volume.sh input raise 2",
+    "on-scroll-down": "~/.config/usrscripts/volume.sh input lower 2",
     "scroll-step": "2",
     "smooth-scrolling-threshold": 2,
     
@@ -389,7 +389,8 @@
       "org.pwmt.zathura": "",
       "xarchiver": "",
       "positron": "",
-      "codium": ""
+      "codium": "",
+      "sublime_merge": ""
     },
     // "rewrite": {
     //     "Firefox Web Browser": "Firefox",
@@ -410,7 +411,7 @@
   },
 
   "custom/usrname": {
-    "format": " <span font_scale=\"superscript\" rise=\"1.5pt\">iHansamal</span>",
+    "format": "  <span font_scale=\"superscript\" rise=\"1.5pt\">iHansamal</span>",
     "tooltip": false,
     "on-click-right": "~/.config/rofi/powermenu/type-1/powermenu.sh"
   },
