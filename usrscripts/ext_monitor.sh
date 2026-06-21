@@ -105,6 +105,8 @@ main ()
 
 	current_status=$(<$status_file)
 	
+	[[ $HDMI_status != 'connected' ]] && display $LVDS on
+
 	if [[ $LVDS_enabled != "enabled" && $current_status != "docked" ]]; then
     	display $LVDS on
 	fi
