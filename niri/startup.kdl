@@ -1,4 +1,4 @@
 spawn-sh-at-startup "swayidle -w & disown"
 spawn-sh-at-startup "waybar -l off & disown"
-spawn-sh-at-startup "awww-daemon -q & disown"
+spawn-sh-at-startup "awww-daemon -q  --no-cache & disown"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & disown"
