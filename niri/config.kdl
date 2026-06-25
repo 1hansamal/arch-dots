@@ -6,8 +6,19 @@ screenshot-path "~/Pictures/Screenshots/scr_%Y-%m-%d_%H-%M-%S.png"
 hotkey-overlay { skip-at-startup; }
 
 layer-rule {
-    match namespace="waybar"
+    match namespace="MacNotch"
+
+    shadow { off; }
+
+    geometry-corner-radius 0
     place-within-backdrop true
+
+    background-effect {
+        xray true
+        blur true
+        noise 0.05
+        saturation 3
+    }
 }
 
 overview {
@@ -29,4 +40,10 @@ include "binds.kdl"
 
 environment {}
 cursor { xcursor-size 16; }
-blur { off; }
+
+blur {
+    passes 3          // Number of blur iterations (higher = stronger)
+    offset 4.0        // Sample distance per pass
+    noise 0.01        // Grain overlay to prevent color banding
+    saturation 1.10   // Boost or desaturate colors behind the window
+}
