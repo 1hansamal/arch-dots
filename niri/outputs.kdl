@@ -2,6 +2,15 @@ output "LVDS-1" {
     mode "1366x768@59.973"
     scale 1
 
+    layout {
+        struts {
+        left 250
+        // right 64
+        // top 64
+        // bottom 64
+        }
+    }
+
     variable-refresh-rate
     focus-at-startup
 }
