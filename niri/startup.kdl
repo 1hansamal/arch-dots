@@ -1,4 +1,9 @@
-spawn-sh-at-startup "swayidle -w & disown"
-spawn-sh-at-startup "waybar -l off & disown"
-spawn-sh-at-startup "awww-daemon -q  --no-cache & disown"
-spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & disown"
+spawn-at-startup "swayidle" "-w"
+spawn-at-startup "waybar" "-l" "off"
+spawn-at-startup "awww-daemon" "-q"
+spawn-at-startup "wl-clip-persist" "--clipboard" "both"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-sh-at-startup "~/.config/usrscripts/wallpaper.sh"
+
+
+// spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & disown"
