@@ -38,12 +38,15 @@ include "animations.kdl"
 include "layout.kdl"
 include "binds.kdl"
 
-environment {}
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
 cursor { xcursor-size 16; }
 
 blur {
-    passes 3          // Number of blur iterations (higher = stronger)
-    offset 4.0        // Sample distance per pass
-    noise 0.01        // Grain overlay to prevent color banding
-    saturation 1.10   // Boost or desaturate colors behind the window
+    passes     1     // Number of blur iterations (higher = stronger)
+    offset     2     // Sample distance per pass
+    noise      0.01  // Grain overlay to prevent color banding
+    saturation 1     // Boost or desaturate colors behind the window
 }

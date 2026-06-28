@@ -33,6 +33,17 @@ window-rule {
 }
 
 window-rule {
+    match app-id="rIDE"
+
+    background-effect {
+        xray true
+        blur true
+        noise 0.03
+        saturation 1
+    }
+}
+
+window-rule {
     match app-id="nwg-look"
 
     open-floating true
