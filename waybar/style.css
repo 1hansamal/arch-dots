@@ -185,7 +185,7 @@ tooltip > box {
 }
 
 #taskbar button:not(.active) {
-  color:      @taskbar-label;
+  color:      @taskbar-label-not-active;
   /*background: @taskbar;*/
 
   margin: 3px 4px;
