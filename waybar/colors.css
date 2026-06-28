@@ -94,7 +94,7 @@
 /* ── Idle Inhibitor ───────────────────────────────────────── */
 @define-color idle-inhibitor             @overlay1;
 @define-color idle-inhibitor-activated   @red;
-@define-color idle-inhibitor-deactivated  @overlay1;
+@define-color idle-inhibitor-deactivated @overlay1;
 
 
 /* ── Bluetooth ────────────────────────────────────────────── */
@@ -118,12 +118,12 @@
 /* ── Workspaces ───────────────────────────────────────────── */
 @define-color workspace              transparent;
 @define-color workspaces-focused     @yellow;
-@define-color workspaces-not-focused @overlay2;
+@define-color workspaces-not-focused @text;
 
 
 /* ── Taskbar ──────────────────────────────────────────────── */
-@define-color taskbar              @surface1;
-@define-color taskbar-label        @overlay2;
-@define-color taskbar-label-active @yellow;
-@define-color taskbar-active       @peach;
-@define-color taskbar-not-active   @surface0;
+@define-color taskbar                  @surface1;
+@define-color taskbar-label-active     @yellow;
+@define-color taskbar-label-not-active @text;
+@define-color taskbar-active           @peach;
+@define-color taskbar-not-active       @surface0;
