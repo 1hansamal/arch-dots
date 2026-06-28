@@ -6,7 +6,7 @@ binds {
     Mod+Space   { spawn "fuzzel"; }
     Mod+Escape  { spawn-sh "~/.config/usrscripts/session_manager.sh"; }
     Mod+Shift+W { spawn-sh "~/.config/usrscripts/wallpaper.sh"; }
-    Mod+Alt+V { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Alt+V   { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
 
     Scroll_Lock         { spawn-sh "pkill -SIGUSR1 waybar"; }
     Ctrl+Scroll_Lock    { spawn-sh "pkill -SIGUSR2 waybar"; }
@@ -17,7 +17,7 @@ binds {
     XF86AudioMicMute       { spawn-sh "~/.config/usrscripts/volume.sh input mute"; }
     XF86MonBrightnessUp    { spawn-sh "~/.config/usrscripts/backlight.sh up"; }
     XF86MonBrightnessDown  { spawn-sh "~/.config/usrscripts/backlight.sh down"; }
-    XF86Display            { spawn-sh "~/.config/usrscripts/ext_monitor.sh"; }
+    XF86Display allow-when-locked=true  { spawn-sh "~/.config/usrscripts/ext_monitor.sh"; }
     XF86HomePage           { spawn "chromium"; }
 
     Mod+TouchpadScrollDown  cooldown-ms=200 { focus-workspace-up; }
