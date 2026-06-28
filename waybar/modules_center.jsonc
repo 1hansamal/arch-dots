@@ -31,6 +31,9 @@
     },
 
     "max-length": 30,
+
+    "on-click-right": "foot wifitui",
+
     "tooltip": true
   },
 
@@ -233,7 +236,8 @@
       "xarchiver": "",
       "positron": "",
       "codium": "",
-      "sublime_merge": ""
+      "sublime_merge": "",
+      "rIDE": ""
     }
   },
 
