@@ -1,0 +1,4 @@
+set selection-clipboard clipboard
+set font "Ubuntu Nerd Font 10"
+set guioptions none
+set window-title-basename true
