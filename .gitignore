@@ -13,7 +13,11 @@ nwg-look
 pulse
 R
 rstudio
-sublime-text
+sublime-text/Backup
+sublime-text/Lib
+sublime-text/Local
+sublime-text/Log
+sublime-text/Trash
 sublime-merge
 Thunar
 user-dirs.dirs
