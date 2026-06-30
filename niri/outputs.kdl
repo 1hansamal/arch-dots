@@ -4,6 +4,10 @@ output "LVDS-1" {
 
     variable-refresh-rate
     focus-at-startup
+
+    layout {
+        struts { left 265; }
+    }
 }
 
 output "HDMI-A-3" {
