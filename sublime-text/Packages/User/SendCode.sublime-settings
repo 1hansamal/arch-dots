@@ -1,0 +1,16 @@
+{
+	
+	"prog": "terminus",
+  "auto_advance" : false,
+  "auto_advance_non_empty": true,
+	"r":
+	{
+		"bracketed_paste_mode": true,
+		"prog": "terminus"
+	},
+	"python" : {
+        "prog": "terminus",
+        "bracketed_paste_mode": true
+  },
+  "linux_terminal": "footclient"
+}

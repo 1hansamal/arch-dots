@@ -1,0 +1,1 @@
+{"variants": [], "target": "ride_exec", "cancel": {"kill": true}, "selector": "source.r, text.tex.latex.rsweave, text.html.markdown.rmarkdown, source.c++.rcpp", "keyfiles": ["DESCRIPTION"]}

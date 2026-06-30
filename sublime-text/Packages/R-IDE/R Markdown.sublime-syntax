@@ -1,0 +1,246 @@
+%YAML 1.2
+---
+name: R Markdown
+scope: text.html.markdown.r
+version: 2
+
+extends: Packages/Markdown/Markdown.sublime-syntax
+
+contexts:
+
+  fenced-syntaxes:
+    - meta_prepend: true
+    - match: '[ \t]*(```)(\{)(bash)\b'
+      captures:
+        1: punctuation.definition.raw.code-fence.begin.markdown
+        2: punctuation.definition.raw.code-fence.options.begin.markdown
+        3: constant.other.language-name.markdown
+      set:
+        - meta_scope: meta.code-fence.definition.begin.markdown
+        - meta_content_scope: meta.options.fenced-kitnr.markdown source.r
+        - match: (?=\})
+          set:
+            - meta_include_prototype: false
+            - match: (\})(\s*\n?)
+              scope: meta.code-fence.definition.begin.markdown
+              captures:
+                1: punctuation.definition.raw.code-fence.options.end.markdown
+                2: meta.fold.begin.markdown
+              embed: scope:source.shell.bash
+              embed_scope: markup.raw.code-fence.markdown
+              escape: ^[ \t]*(```)(\n?)
+              escape_captures:
+                0: meta.code-fence.definition.end.markdown
+                1: punctuation.definition.raw.code-fence.end.markdown
+                2: meta.fold.end.markdown
+              pop: 1
+        - include: scope:source.r#statements
+
+    - match: '[ \t]*(```)(\{)(julia)\b'
+      captures:
+        1: punctuation.definition.raw.code-fence.begin.markdown
+        2: punctuation.definition.raw.code-fence.options.begin.markdown
+        3: constant.other.language-name.markdown
+      set:
+        - meta_scope: meta.code-fence.definition.begin.markdown
+        - meta_content_scope: meta.options.fenced-kitnr.markdown source.r
+        - match: (?=\})
+          set:
+            - meta_include_prototype: false
+            - match: (\})(\s*\n?)
+              scope: meta.code-fence.definition.begin.markdown
+              captures:
+                1: punctuation.definition.raw.code-fence.options.end.markdown
+                2: meta.fold.begin.markdown
+              embed: scope:source.julia
+              embed_scope: markup.raw.code-fence.markdown
+              escape: ^[ \t]*(```)(\n?)
+              escape_captures:
+                0: meta.code-fence.definition.end.markdown
+                1: punctuation.definition.raw.code-fence.end.markdown
+                2: meta.fold.end.markdown
+              pop: 1
+        - include: scope:source.r#statements
+
+    - match: '[ \t]*(```)(\{)(python)\b'
+      captures:
+        1: punctuation.definition.raw.code-fence.begin.markdown
+        2: punctuation.definition.raw.code-fence.options.begin.markdown
+        3: constant.other.language-name.markdown
+      set:
+        - meta_scope: meta.code-fence.definition.begin.markdown
+        - meta_content_scope: meta.options.fenced-kitnr.markdown source.r
+        - match: (?=\})
+          set:
+            - meta_include_prototype: false
+            - match: (\})(\s*\n?)
+              scope: meta.code-fence.definition.begin.markdown
+              captures:
+                1: punctuation.definition.raw.code-fence.options.end.markdown
+                2: meta.fold.begin.markdown
+              embed: scope:source.python
+              embed_scope: markup.raw.code-fence.markdown
+              escape: ^[ \t]*(```)(\n?)
+              escape_captures:
+                0: meta.code-fence.definition.end.markdown
+                1: punctuation.definition.raw.code-fence.end.markdown
+                2: meta.fold.end.markdown
+              pop: 1
+        - include: scope:source.r#statements
+
+    - match: '[ \t]*(```)(\{)(r|Rscript)\b'
+      captures:
+        1: punctuation.definition.raw.code-fence.begin.markdown
+        2: punctuation.definition.raw.code-fence.options.begin.markdown
+        3: constant.other.language-name.markdown
+      set:
+        - meta_scope: meta.code-fence.definition.begin.markdown
+        - meta_content_scope: meta.code-fence.definition.optio.markdown
+        - match: (?=\})
+          set:
+            - meta_include_prototype: false
+            - match: (\})(\s*\n?)
+              scope: meta.code-fence.definition.begin.markdown
+              captures:
+                1: punctuation.definition.raw.code-fence.options.end.markdown
+                2: meta.fold.begin.markdown
+              embed: scope:source.r
+              embed_scope: markup.raw.code-fence.markdown
+              escape: ^[ \t]*(```)(\n?)
+              escape_captures:
+                0: meta.code-fence.definition.end.markdown
+                1: punctuation.definition.raw.code-fence.end.markdown
+                2: meta.fold.end.markdown
+              pop: 1
+        - include: scope:source.r#statements
+
+    - match: '[ \t]*(```)(\{)(sql)\b'
+      captures:
+        1: punctuation.definition.raw.code-fence.begin.markdown
+        2: punctuation.definition.raw.code-fence.options.begin.markdown
+        3: constant.other.language-name.markdown
+      set:
+        - meta_scope: meta.code-fence.definition.begin.markdown
+        - meta_content_scope: meta.options.fenced-kitnr.markdown source.r
+        - match: (?=\})
+          set:
+            - meta_include_prototype: false
+            - match: (\})(\s*\n?)
+              scope: meta.code-fence.definition.begin.markdown
+              captures:
+                1: punctuation.definition.raw.code-fence.options.end.markdown
+                2: meta.fold.begin.markdown
+              embed: scope:source.sql
+              embed_scope: markup.raw.code-fence.markdown
+              escape: ^[ \t]*(```)(\n?)
+              escape_captures:
+                0: meta.code-fence.definition.end.markdown
+                1: punctuation.definition.raw.code-fence.end.markdown
+                2: meta.fold.end.markdown
+              pop: 1
+        - include: scope:source.r#statements
+
+###[ INLINE ]#################################################################
+
+  inlines:
+    - meta_prepend: true
+    - match: '(~)(?=([^~ \n]|\\ )+~)'
+      scope: punctuation.definition.subscript.begin.markdown
+      push: subscript-body
+    - match: '(\^)(?=([^\^ \n]|\\ )+\^)'
+      scope: punctuation.definition.superscript.begin.markdown
+      push: supersubscript-body
+
+  subscript-body:
+    - meta_scope: markup.subscript.markdown-pandoc
+    - match: '~'
+      scope: punctuation.definition.subscript.end.markdown
+      pop: 1
+    - include: emphasis
+
+  supersubscript-body:
+    - meta_scope: markup.superscript.markdown-pandoc
+    - match: \^
+      scope: punctuation.definition.superscript.end.markdown
+      pop: 1
+    - include: emphasis
+
+  links:
+    - meta_prepend: true
+    # citations
+    - match: '(@)([\w:-]+)'
+      scope: meta.link.reference.markdown-pandoc
+      captures:
+        1: constant.other.cite.markdown-pandoc
+        2: keyword.other.cite.markdown-pandoc
+
+  code-spans:
+    - meta_prepend: true
+    - match: (`+)(r) (?!`)
+      captures:
+        1: punctuation.definition.raw.begin.markdown
+        2: constant.other.language-name.markdown
+      push: kitnr-code-span-body
+
+  kitnr-code-span-body:
+    - meta_scope: markup.raw.inline.markdown
+    - meta_content_scope: source.r.embedded.markdown
+    - match: \1(?!`)
+      scope: punctuation.definition.raw.end.markdown
+      pop: 1
+    - match: '`+'
+    - match: ^\s*$\n?
+      scope: invalid.illegal.non-terminated.raw.markdown
+      pop: 1
+    - include: scope:source.r#statements
+
+  math-inline:
+    - meta_append: true
+    # LaTeX \begin{...} \end{...} math blocks
+    - include: scope:text.tex.latex#block-math-begin-end-command
+    # Inline LaTeX Math Expressions with some heuristics
+    # to distinguish from normally escaped characters
+    - match: |-
+        (?x)
+        # begin
+        (\\\[)(?=\S)
+        # end
+        (?= .* [^\s\\\\](\\\\{2})*\\\](?!\w) )
+      scope:
+        markup.math.inline.markdown
+        text.tex.latex.embedded.markdown
+        meta.environment.math.block.dollar.latex
+        punctuation.definition.math.begin.latex
+      embed: math-content
+      embed_scope:
+        markup.math.inline.markdown
+        text.tex.latex.embedded.markdown
+        meta.environment.math.block.dollar.latex
+      escape: '{{no_escape_behind}}\\\]'
+      escape_captures:
+        0: markup.math.inline.markdown
+           text.tex.latex.embedded.markdown
+           meta.environment.math.block.dollar.latex
+           punctuation.definition.math.end.latex
+    - match: |-
+        (?x)
+        # begin
+        (\\\()(?=\S)
+        # end
+        (?= .* [^\s\\\\](\\\\{2})*\\\)(?!\w) )
+      scope:
+        markup.math.inline.markdown
+        text.tex.latex.embedded.markdown
+        meta.environment.math.block.dollar.latex
+        punctuation.definition.math.begin.latex
+      embed: math-content
+      embed_scope:
+        markup.math.inline.markdown
+        text.tex.latex.embedded.markdown
+        meta.environment.math.block.dollar.latex
+      escape: '{{no_escape_behind}}\\\)'
+      escape_captures:
+        0: markup.math.inline.markdown
+           text.tex.latex.embedded.markdown
+           meta.environment.math.block.dollar.latex
+           punctuation.definition.math.end.latex

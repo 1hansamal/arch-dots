@@ -1,0 +1,20 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+  "variables":
+  {
+    "dark_bg": "rgb(0, 0, 0)",
+    "medium_dark_bg": "rgb(0, 0, 0)",
+    "medium_bg": "rgb(0, 0, 0)",
+    "light_bg": "rgb(0, 0, 0)",
+  },
+  "rules":
+  [
+    {
+      "class": "tabset_control",
+      "settings": {"file_tab_style": ["", "rounded"]},
+      "tab_overlap": 10,
+      "tab_height": 26,
+      "connector_height": 2,
+    },
+  ]
+}

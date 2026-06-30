@@ -1,0 +1,23 @@
+// Settings in here override those in "LSP-R/LSP-R.sublime-settings"
+
+{
+  "command": [
+        "R",
+        "--slave",
+        "-e",
+        "languageserver::run()"
+    ],
+    "selector": "source.r | text.html.markdown.rmarkdown",
+    "initializationOptions": {},
+    "settings": {
+        // Debug R Language Server
+        "r.lsp.debug": false,
+        // Enable Diagnostics
+        "r.lsp.diagnostics": false,
+        // Disable rich markdown based documentation
+        "r.lsp.rich_documentation": true
+    },
+    "env": {
+        "LANG": "en_US.UTF-8"
+    }
+}

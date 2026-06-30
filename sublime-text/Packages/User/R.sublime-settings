@@ -1,0 +1,20 @@
+// These settings override both User and Default settings for the R syntax
+{
+  "auto_complete_include_snippets": false,
+
+  "auto_hide_menu": true,
+  "auto_hide_tabs": true,
+  "shift_tab_unindent": true,
+  
+  "hardware_acceleration": "opengl",
+  
+  "rulers": [80],
+  "relative_line_numbers": true,
+  
+  "spell_check": true,
+  
+  "translate_tabs_to_spaces": true,
+  
+  "vintage_use_clipboard": true,
+  "ignored_packages": []
+}

@@ -1,0 +1,52 @@
+{
+    // the default config, either a single config name or a platform
+    // specific dict
+    "default_config": {
+        "linux": "R"
+    },
+    // a list of available shells to execute
+    "shell_configs": [
+        {
+            "name": "Bash",
+            "cmd": ["bash", "-i", "-l"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+        {
+            "name": "Arf",
+            "cmd": ["arf", "--no-history", "--no-save", "--quiet"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+        {
+            "name": "R",
+            "cmd": ["R", "--no-save", "--quiet"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+        {
+            "name": "Radian",
+            "cmd": ["radian", "--no-history", "--quiet"],
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+        {
+            "name": "Python-Stats",
+            "cmd": "/home/ihansamal/.stats/bin/ipython",
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+        {
+            "name": "Python-Manim",
+            "cmd": "/home/ihansamal/.manim/bin/ipython",
+            "env": {},
+            "enable": true,
+            "platforms": ["linux"]
+        },
+    ],
+}

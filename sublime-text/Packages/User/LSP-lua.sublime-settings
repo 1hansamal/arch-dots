@@ -1,0 +1,11 @@
+// Settings in here override those in "LSP-lua/LSP-lua.sublime-settings"
+
+{
+  "Settings": {
+    "Lua.format.defaultConfig": {
+      "max_line_length": 300,
+    },
+    "Lua.format.enable": true,
+  },
+  "enabled": false,
+}

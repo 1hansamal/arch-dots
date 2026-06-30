@@ -1,0 +1,53 @@
+[
+    {
+        "keys": ["alt+t"], 
+        "command": "terminus_open", 
+        "args": { "cwd": "${folder}", "config_name": "<ask>" }
+    },
+    {
+        "keys": ["alt+escape"], "command": "terminus_close", "args": {}
+    },
+
+    // R specific commands
+    {
+        "keys": ["alt+r"], 
+        "command": "terminus_open", 
+        "args": { 
+            "cwd": "${folder}", "config_name": "R",
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        },
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.r" }]
+    },
+
+    { 
+        "keys": ["alt+shift+r"],
+        "command": "r_send_and_capture", 
+        "context": [{  "key": "selector", "operator": "equal", "operand": "source.r" }] 
+    },
+    {
+        "keys": ["alt+-"],
+        "command": "insert",
+        "args": { "characters": " <- " },
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.r" }]
+    },
+    {
+        "keys": ["alt+="],
+        "command": "insert",
+        "args": { "characters": " = " },
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.r" }]
+    },
+    {
+        "keys": ["alt+m"],
+        "command": "insert",
+        "args": { "characters": " |> " },
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.r" }]
+    },
+    {
+        "keys": ["alt+shift+m"],
+        "command": "insert",
+        "args": { "characters": " %>% " },
+        "context": [{ "key": "selector", "operator": "equal", "operand": "source.r" }]
+    }
+]
