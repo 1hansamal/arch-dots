@@ -32,7 +32,7 @@
 
     "max-length": 30,
 
-    "on-click-right": "foot wifitui",
+    "on-click-right": "footclient wifitui",
 
     "tooltip": true
   },
@@ -182,7 +182,7 @@
     "max-length": 20,
 
     "on-click": "~/.config/usrscripts/bluetooth.sh",
-    "on-click-right": "foot bluetui",
+    "on-click-right": "footclient bluetui",
 
     "tooltip": true,
     "tooltip-format": "{controller_alias}\t{num_connections} connected",
@@ -207,7 +207,7 @@
       "critical": 90
     },
 
-    "on-click-right": "foot btop",
+    "on-click-right": "footclient btop",
 
     "tooltip": true,
     "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
@@ -225,7 +225,8 @@
       "google-chrome": "",
       "chromium": "",
       "sublime_text": "",
-      "foot": "󰽒",
+      "foot": "",
+      "footclient": "",
       "waybar": "󰰮",
       "nemo": "",
       "rstudio": "",
@@ -237,7 +238,6 @@
       "positron": "",
       "codium": "",
       "sublime_merge": "",
-      "rIDE": ""
     }
   },
 
