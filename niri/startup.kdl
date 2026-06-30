@@ -1,3 +1,4 @@
+spawn-at-startup "foot" "--server"
 spawn-at-startup "swayidle" "-w"
 spawn-at-startup "waybar" "-l" "off"
 spawn-at-startup "awww-daemon" "-q"

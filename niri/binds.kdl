@@ -1,7 +1,7 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return  { spawn "foot"; }
+    Mod+Return  { spawn "footclient"; }
     Mod+E       { spawn "nemo"; }
     Mod+Space   { spawn "fuzzel"; }
     Mod+Escape  { spawn-sh "~/.config/usrscripts/session_manager.sh"; }
