@@ -1,7 +1,7 @@
 window-rule {
     geometry-corner-radius 4
     clip-to-geometry true
-    // opacity 0.95
+    // opacity 0.85
     // background-effect {
     //     xray false
     //     blur true
@@ -28,19 +28,8 @@ window-rule {
     open-maximized false
     open-focused true
 
-    default-column-width { fixed 700; }
-    default-window-height { fixed 500; }
-}
-
-window-rule {
-    match app-id="rIDE"
-
-    background-effect {
-        xray true
-        blur true
-        noise 0.03
-        saturation 1
-    }
+    default-column-width { fixed 750; }
+    default-window-height { fixed 600; }
 }
 
 window-rule {
@@ -66,18 +55,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id="blueman-manager"
-
-    open-floating true
-    open-maximized false
-    open-focused true
-
-    default-column-width { fixed 500; }
-    default-window-height { fixed 500; }
-}
-
-
-window-rule {
 
     match app-id=r"[Cc]hromium" title="Save File"
     match app-id=r"[Gg]oogle-[Cc]hrome" title="[Oo]pen [Ff]iles"
@@ -95,29 +72,10 @@ window-rule {
 }
 
 window-rule {
-    match app-id="linux_colorpicker.py"
-
-    open-floating true
-    open-maximized false
-
-    default-column-width { fixed 400; }
-    default-window-height { fixed 200; }
-}
-
-window-rule {
-    match app-id="localsend"
-    open-floating true
-    open-maximized false
-
-    default-column-width { fixed 500; }
-    default-window-height { fixed 600; }
-}
-
-window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     open-floating true
     open-maximized false
 
-    default-column-width { fixed 700; }
+    default-column-width { fixed 750; }
     default-window-height { fixed 400; }
 }
