@@ -1,129 +1,47 @@
-/* ─────────────────────────────────────────────
-   PALETTE LAYER (swap this to change theme)
-   ───────────────────────────────────────────── */
+@define-color default #a89984;
 
-@define-color base          #1e1e2e;
-@define-color mantle        #181825;
-@define-color crust         #11111b;
+@define-color fg #000000;
+@define-color window-bg #181818;
 
-@define-color text          #cdd6f4;
-@define-color subtext1      #bac2de;
-@define-color subtext0      #a6adc8;
+@define-color menuitem-hover #458588;
 
-@define-color surface0      #313244;
-@define-color surface1      #45475a;
-@define-color surface2      #585b70;
+@define-color clock #d5c4a1;
+@define-color backlight #c5d5fa;
 
-@define-color overlay0      #6c7086;
-@define-color overlay1      #7f849c;
-@define-color overlay2      #9399b2;
+@define-color workspace #d5c4a1;
+@define-color workspace-active #282828;
+@define-color workspace-inactive #504945;
 
-@define-color blue          #89b4fa;
-@define-color green         #a6e3a1;
-@define-color yellow        #f9e2af;
-@define-color red           #f38ba8;
-@define-color peach         #fab387;
-@define-color sapphire      #74c7ec;
-@define-color mauve         #cba6f7;
-@define-color pink          #f5c2e7;
-@define-color teal          #94e2d5;
+@define-color taskbar #d5c4a1;
+@define-color task-active #c5d5fa;
+@define-color task-inactive #504945;
 
+@define-color blue-on #458588;
+@define-color blue-connected #83a598;
+@define-color blue-off #fb4934;
+@define-color blue-disabled #928374;
 
-/* ─────────────────────────────────────────────
-   SEMANTIC LAYER (your original variables)
-   ───────────────────────────────────────────── */
+@define-color net-ethernet     #b8bb26;
+@define-color net-wifi         #8ec07c;
+@define-color net-linked       #fabd2f;
+@define-color net-disconnected #fb4934;
+@define-color net-disabled     #928374;
 
-@define-color foreground          @base;
-@define-color foreground-light    @crust;
-@define-color background          @base;
+@define-color bat-full #d3869b;
+@define-color bat-plugged #83a598;
+@define-color bat-discharging #fabd2f;
+@define-color bat-warning #fe8019;
+@define-color bat-critical #fb4934;
 
-@define-color custom-div          @text;
+@define-color audio-sink #d5c4a1;
+@define-color audio-source #d5c4a1;
+@define-color audio-muted #928374;
 
+@define-color mem #d5c4a1;
+@define-color mem-warning #fabd2f;
+@define-color mem-critical #fb4934;
 
-/* ── Network ──────────────────────────────────────────────── */
-@define-color network               @blue;
-@define-color network-disabled      @peach;
-@define-color network-disconnected  @peach;
-@define-color network-linked        @green;
-@define-color network-ethernet      @sapphire;
-@define-color network-wifi          @blue;
+@define-color idle-on #d3869b;
+@define-color idle-off #a89984;
 
-
-/* ── Battery ──────────────────────────────────────────────── */
-@define-color battery             @yellow;
-@define-color battery-full        @green;
-@define-color battery-plugged     @teal;
-@define-color battery-charging    @blue;
-@define-color battery-discharging @yellow;
-@define-color battery-warning     @peach;
-@define-color battery-critical    @red;
-
-
-/* ── Pulseaudio ───────────────────────────────────────────── */
-@define-color pulseaudio                        @blue;
-@define-color pulseaudio-sink                   @sapphire;
-@define-color pulseaudio-source                 @green;
-@define-color pulseaudio-muted                  @overlay0;
-@define-color pulseaudio-sink-muted             @overlay0;
-@define-color pulseaudio-source-muted           @overlay0;
-
-@define-color pulseaudio-bluetooth              @mauve;
-@define-color pulseaudio-bluetooth-sink         @blue;
-@define-color pulseaudio-bluetooth-source       @green;
-@define-color pulseaudio-bluetooth-muted        @overlay1;
-@define-color pulseaudio-bluetooth-sink-muted   @overlay1;
-@define-color pulseaudio-bluetooth-source-muted @overlay1;
-
-
-/* ── Window / Clock / Backlight ──────────────────────────── */
-@define-color window              @surface0;
-@define-color clock               @text;
-@define-color backlight           @subtext1;
-
-
-/* ── Username ─────────────────────────────────────────────── */
-@define-color username            @subtext1;
-
-
-/* ── Mpris ────────────────────────────────────────────────── */
-@define-color mpris               @green;
-@define-color mpris-playing       @green;
-@define-color mpris-paused        @surface1;
-
-
-/* ── Idle Inhibitor ───────────────────────────────────────── */
-@define-color idle-inhibitor             @overlay1;
-@define-color idle-inhibitor-activated   @red;
-@define-color idle-inhibitor-deactivated @overlay1;
-
-
-/* ── Bluetooth ────────────────────────────────────────────── */
-@define-color bluetooth                  @blue;
-@define-color bluetooth-on               @green;
-@define-color bluetooth-off              @surface0;
-@define-color bluetooth-connected        @blue;
-@define-color bluetooth-disabled         @surface1;
-@define-color bluetooth-discoverable     @mauve;
-@define-color bluetooth-discovering      @pink;
-@define-color bluetooth-pairable         @teal;
-@define-color bluetooth-no-controller    @red;
-
-
-/* ── Memory ───────────────────────────────────────────────── */
-@define-color memory               @green;
-@define-color memory-warning       @peach;
-@define-color memory-critical      @red;
-
-
-/* ── Workspaces ───────────────────────────────────────────── */
-@define-color workspace              transparent;
-@define-color workspaces-focused     @yellow;
-@define-color workspaces-not-focused @text;
-
-
-/* ── Taskbar ──────────────────────────────────────────────── */
-@define-color taskbar                  @surface1;
-@define-color taskbar-label-active     @yellow;
-@define-color taskbar-label-not-active @text;
-@define-color taskbar-active           @peach;
-@define-color taskbar-not-active       @surface0;
+@define-color session #d5c4a1;

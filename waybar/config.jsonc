@@ -1,49 +1,56 @@
 {
-  "output": ["LVDS-1", "HDMI-A-3"],
-
-  "name": "MacNotch",
-
+  "name": "Waybar",
+  "id": "waybar",
+  "ipc": false,
   "layer": "top",
   "position": "top",
-  // "mode": "dock",
-
-  // "start_hidden": false,
-  // "passthrough": false,
-  // "ipc": false,
-  // "id": ,
-  "reload_style_on_change": true,
-
-  // "width": ,
+  "mode": null,
+  "exclusive": true,
+  "start_hidden": false,
+  "output": [
+    "LVDS-1",
+    "HDMI-A-3"
+  ],
   "height": 20,
-  // "margin-<top|left|bottom|right>": ,
+  "width": null,
   "spacing": 0,
-  "fixed-center": true,
-
-  "include": ["~/.config/waybar/modules_center.jsonc"],
-
-  // "modules-left": [],
+  "margin": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": null,
   "modules-center": [
     "clock",
-    "custom/div",
     "niri/workspaces",
-    "custom/div2",
     "wlr/taskbar",
-    "custom/div",
-    // "niri/window",
     "network",
     "bluetooth",
-    "custom/div",
-    "mpris",
-    "pulseaudio#sink",
-    "pulseaudio#source",
-    "custom/div",
+    "wireplumber#sink",
+    "wireplumber#source",
     "battery",
     "backlight",
     "memory",
     "idle_inhibitor",
-    "custom/div",
-    // "tray",
-    "custom/usrname"
+    "custom/session"
+  ],
+  "modules-right": null,
+  "expand-left": false,
+  "expand-center": true,
+  "expand-right": false,
+  "no-center": false,
+  "fixed-center": true,
+  "passthrough": false,
+  "reload_style_on_change": true,
+  "modifier-reset": "release",
+  "on-sigusr1": "toggle",
+  "on-sigusr2": "reload",
+  "include": [
+    "modules/network.jsonc",
+    "modules/clock.jsonc",
+    "modules/battery.jsonc",
+    "modules/niri.jsonc",
+    "modules/system.jsonc",
+    "modules/sound.jsonc"
   ]
-  // "modules-right": []
 }

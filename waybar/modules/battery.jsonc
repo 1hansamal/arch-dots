@@ -1,0 +1,44 @@
+{
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "AC",
+    "interval": 60,
+    "full-at": 100,
+    "design-capacity": true,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}",
+    "format-full": "{icon} <small>full</small>",
+    "format-plugged": "{icon}",
+    "format-charging": "{icon} {capacity}",
+    "format-discharging": "{icon} {capacity}",
+    "format-discharging-warning": "{icon} {capacity}",
+    "format-discharging-critical": "󱃍 {capacity}",
+    "format-time": null,
+    "format-icons": {
+      "charging": "",
+      "plugged": "",
+      "full": "󱟢",
+      "discharging": [
+        "󰁻",
+        "󰁽",
+        "󰁿",
+        "󰂁",
+        "󰁹"
+      ]
+    },
+    "max-length": null,
+    "min-length": null,
+    "align": 0,
+    "justify": "center",
+    "rotate": 0,
+    "tooltip": false,
+    "events": {
+      "on-discharging-warning": null,
+      "on-discharging-critical": null,
+      "on-charging-100": null
+    }
+  }
+}

@@ -1,0 +1,59 @@
+name: Waybar
+id: waybar
+ipc: false
+
+layer: top
+position: top
+mode: null
+exclusive: true
+start_hidden: false
+
+output:
+  - LVDS-1
+  - HDMI-A-3
+
+height: 20
+width: null
+
+spacing: 0
+margin: 0
+margin-top: 0
+margin-bottom: 0
+margin-left: 0
+margin-right: 0
+
+modules-left: null
+modules-center:
+  - clock
+  - niri/workspaces
+  - wlr/taskbar
+  - network
+  - bluetooth
+  - wireplumber#sink
+  - wireplumber#source
+  - battery
+  - backlight
+  - memory
+  - idle_inhibitor
+  - custom/session
+modules-right: null
+
+expand-left: false
+expand-center: true
+expand-right: false
+no-center: false
+fixed-center: true
+
+passthrough: false
+reload_style_on_change: true
+modifier-reset: release
+on-sigusr1: toggle
+on-sigusr2: reload
+
+include:
+  - modules/network.jsonc
+  - modules/clock.jsonc
+  - modules/battery.jsonc
+  - modules/niri.jsonc
+  - modules/system.jsonc
+  - modules/sound.jsonc

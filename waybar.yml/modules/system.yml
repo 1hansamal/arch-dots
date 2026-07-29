@@ -1,0 +1,57 @@
+memory:
+  interval: 60
+
+  format: "{icon} {percentage}"
+  format-warning: "{icon}  {percentage}"
+  format-critical: "{icon}  <small>critical!</small>"
+  
+  states:
+    warning: 70
+    critical: 90
+
+  format-icons: 󰍛
+
+  rotate: 0
+  align: 0.5
+  justify: center
+  max-length: null
+  min-length: null
+  
+  on-double-click: footclient -a btop btop
+
+  tooltip: false
+  tooltip-format: null
+
+backlight:
+  device: intel_backlight
+  interval: 60
+
+  format: "{icon} {percent}"
+  format-icons: 
+
+  on-double-click: sunsetr -b
+  on-click-right: sunsetr stop
+  on-scroll-up: ~/.config/usrscripts/backlight.sh up
+  on-scroll-down: ~/.config/usrscripts/backlight.sh down
+  
+  tooltip: false
+
+idle_inhibitor:
+  format: "{icon}"
+  format-icons:
+    activated: idle 
+    deactivated: idle 
+  
+  tooltip: false
+  timeout: 60
+
+custom/session:
+  format: ⏻
+  tooltip: false
+  menu: on-click
+  menu-file: ~/.config/waybar/menus/session.xml
+  menu-actions:
+    logout: niri msg action quit
+    suspend: systemctl suspend
+    reboot: systemctl reboot
+    shutdown: systemctl shutdown

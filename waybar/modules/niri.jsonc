@@ -1,0 +1,42 @@
+{
+  "niri/workspaces": {
+    "all-outputs": false,
+    "current-only": false,
+    "format": null,
+    "format-icons": null,
+    "disable-click": false,
+    "disable-markup": false,
+    "expand": false
+  },
+  "wlr/taskbar": {
+    "all-outputs": false,
+    "active-first": false,
+    "sort-by-app-id": false,
+    "markup": true,
+    "format": "{app_id}",
+    "tooltip-format": "{title}",
+    "icon-theme": null,
+    "icon-size": null,
+    "on-click": "activate",
+    "app_ids-mapping": {
+      "chromium": "",
+      "sublime_text": "",
+      "foot": "󰆍",
+      "footclient": "󰆍",
+      "nemo": "󰉋",
+      "rstudio": "",
+      "code": "",
+      "vlc": "󰕼",
+      "texstudio": "",
+      "org.pwmt.zathura": "",
+      "positron": "",
+      "codium": "",
+      "sublime_merge": "",
+      "bluetui": "󰂱",
+      "btop": "",
+      "wifitui": "󱚾",
+      "org.pipewire.Helvum": "󰟥",
+      "wiremix": "󱑽"
+    }
+  }
+}

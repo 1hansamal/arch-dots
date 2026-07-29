@@ -1,0 +1,114 @@
+network:
+  interface: null
+  rfkill: false
+  interval: null
+  family: null
+
+  format: "{icon}"
+  format-ethernet: "{icon}"
+  format-wifi: "{icon} <small>{essid}</small>"
+  format-linked: "{icon}"
+  format-disconnected: "{icon}"
+  format-disabled: "{icon}"
+  format-alt: null
+
+  format-icons: 
+    wifi: [󰤟, 󰤢, 󰤥, 󰤨]
+    ethernet: 󰈀
+    linked: 
+    disconnected: 󰤮
+    disabled: 󰀝
+
+  
+  rotate: 0
+  align: 0
+  justify: center
+  max-length: 15
+  expand: false
+
+  on-click-right: "footclient -a wifitui wifitui"
+
+  smooth-scrolling-threshold: null
+
+  tooltip: true
+  tooltip-format: 
+    "{essid}  󰒢 {signalStrength}%   {frequency}GHz  󰩟 {ipaddr}"
+  tooltip-format-ethernet: 
+    "{ifname}  󰒢 {signalStrength}%   {frequency}GHz  󰩟 {ipaddr}"
+  tooltip-format-wifi: |-
+    {essid}  󰒢 : {signalStrength}%, {frequency}GHz
+    IPv4: {ipaddr}
+  tooltip-format-disconnected: "Disconnected"
+  tooltip-format-disabled: "Disabled"
+
+bluetooth:
+
+  format-device-preference:
+    - "Headphones"
+    - "Keyboard"
+    - "Mouse"
+
+  format: " {status}"
+  format-disabled: null
+  format-off: "󰂲 Off"
+  format-on: "󰂯 On"
+  format-connected: "{icon} {num_connections}"
+  format-connected-battery: null
+
+  format-icons:
+    enabled: 󰂯
+    connected: 󰂱
+    on: "󰂯"
+    off: "󰂲"
+    disabled: "󰂲"
+
+  on-double-click: bluetoothctl power on
+  on-click-middle: bluetoothctl power off
+  on-click-right: footclient -a bluetui bluetui
+
+  tooltip: true
+  tooltip-format: |
+    {controller_alias}
+    {controller_address}
+
+    Status: {status}
+
+  tooltip-format-disabled: |
+    Bluetooth Disabled
+
+  tooltip-format-off: |
+    Bluetooth Powered Off
+
+  tooltip-format-on: |
+    {controller_alias}
+    {controller_address}
+
+    No devices connected
+
+  tooltip-format-connected: |
+    {controller_alias}
+    {controller_address}
+
+    Connected Devices ({num_connections}):
+
+    {device_enumerate}
+
+  tooltip-format-connected-battery: |
+    {controller_alias}
+    {controller_address}
+
+    Device: {device_alias}
+    Battery: {device_battery_percentage}%
+
+  tooltip-format-no-controller: |
+    No Bluetooth Controller Found
+
+  tooltip-format-enumerate-connected: |
+    • {device_alias}
+      Address: {device_address}
+
+  tooltip-format-enumerate-connected-battery: |
+    • {device_alias}
+      Address: {device_address}
+      Battery: {device_battery_percentage}%
+

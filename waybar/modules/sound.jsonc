@@ -1,0 +1,30 @@
+{
+  "wireplumber#sink": {
+    "node-type": "Audio/Sink",
+    "format": "{icon} {volume}",
+    "format-muted": " {volume}",
+    "format-bluetooth": "{bll}",
+    "format-bluetooth-muted": "ew",
+    "format-icons": [
+      "",
+      ""
+    ],
+    "scroll-step": 0.5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "helvum",
+    "on-click-right": "footclient -a wiremix wiremix",
+    "tooltip": true,
+    "tooltip-format": "{node_name}"
+  },
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": " {volume}",
+    "format-muted": " {volume}",
+    "scroll-step": 0.5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-click-middle": "helvum",
+    "on-click-right": "footclient -a wiremix wiremix",
+    "tooltip": true,
+    "tooltip-format": "{node_name}"
+  }
+}

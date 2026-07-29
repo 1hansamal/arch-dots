@@ -1,268 +1,143 @@
-@import "colors.css";
-
-/* ─────────────────────────────────────────────
-   BASE RESET
-   ───────────────────────────────────────────── */
 * {
   all: unset;
-  font-family: "Google Sans Flex", "Ubuntu Nerd Font Propo";
-}
-
-#waybar {
-  background: alpha(black, 0.3);
-}
-
-/* ─────────────────────────────────────────────
-   CONTAINERS
-   ───────────────────────────────────────────── */
-#waybar .modules-center {
-  /*background: alpha(@background, 0.);*/
-  padding: 1px 40px;
-  border-radius: 0px 0px 20px 20px;
-}
-
-
-/* ─────────────────────────────────────────────
-   TOOLTIP
-   ───────────────────────────────────────────── */
-tooltip {
-  color: @text;
-  background-color: alpha(black, 0.75);
-  font-size: 10pt;
-  border-radius: 8px;
-}
-
-tooltip > box {
-  padding: 5px 10px;
-}
-
-
-/* ─────────────────────────────────────────────
-   MODULE BASE STYLE
-   ───────────────────────────────────────────── */
-#network,
-#battery,
-#clock,
-#window,
-#pulseaudio,
-#backlight,
-#mpris.playing,
-#mpris.paused,
-#idle_inhibitor,
-#bluetooth,
-#memory,
-#custom-usrname {
-  margin: 3px 2px;
-  padding: 0px 8px;
-  border-radius: 10px;
-
-  color: @foreground;
-
-  font-size: 12pt;
-  font-weight: 600;
-
-  transition: all 0.2s ease-in-out;
-}
-
-
-/* ─────────────────────────────────────────────
-   DIVIDERS / CUSTOM
-   ───────────────────────────────────────────── */
-#custom-div,
-#custom-div2 {
-  color: @custom-div;
-  padding: 0px 4px;
-}
-
-
-/* ─────────────────────────────────────────────
-   NETWORK
-   ───────────────────────────────────────────── */
-#network { background: @network; }
-#network.disabled { background: @network-disabled; }
-#network.disconnected { background: @network-disconnected; }
-#network.linked { background: @network-linked; }
-#network.ethernet { background: @network-ethernet; }
-#network.wifi { background: @network-wifi; }
-
-
-/* ─────────────────────────────────────────────
-   BATTERY
-   ───────────────────────────────────────────── */
-#battery { background: @battery; }
-#battery.full { background: @battery-full; }
-#battery.plugged { background: @battery-plugged; }
-#battery.charging { background: @battery-charging; }
-#battery.discharging { background: @battery-discharging; }
-#battery.discharging.warning { background: @battery-warning; }
-#battery.discharging.critical { background: @battery-critical; }
-
-
-/* ─────────────────────────────────────────────
-   PULSEAUDIO
-   ───────────────────────────────────────────── */
-#pulseaudio { background: @pulseaudio; }
-#pulseaudio.sink { background: @pulseaudio-sink; }
-#pulseaudio.source { background: @pulseaudio-source; }
-
-#pulseaudio.sink.sink-muted { background: @pulseaudio-sink-muted; }
-#pulseaudio.source.source-muted { background: @pulseaudio-source-muted; }
-
-#pulseaudio.bluetooth { background: @pulseaudio-bluetooth; }
-#pulseaudio.sink.bluetooth.sink { background: @pulseaudio-bluetooth-sink; }
-#pulseaudio.source.bluetooth.source { background: @pulseaudio-bluetooth-source; }
-
-#pulseaudio.bluetooth.muted { background: @pulseaudio-bluetooth-muted; }
-#pulseaudio.sink.bluetooth.sink-muted { background: @pulseaudio-bluetooth-sink-muted; }
-#pulseaudio.source.bluetooth.source-muted { background: @pulseaudio-bluetooth-source-muted; }
-
-
-/* ─────────────────────────────────────────────
-   SYSTEM MODULES
-   ───────────────────────────────────────────── */
-#window { background: @window; }
-
-#clock {
-  background: @clock;
+  font-family: "Droid Sans", "Ubuntu Nerd Font Propo";
   font-weight: 900;
 }
 
-#backlight { background: @backlight; }
-#custom-usrname { background: @username; }
+@import "colors.css";
 
+#waybar .modules-center {
+  color: @fg;
+  background: @window-bg;
 
-/* ─────────────────────────────────────────────
-   MPRIS
-   ───────────────────────────────────────────── */
-#mpris.playing { background: @mpris-playing; }
-#mpris.paused { background: @mpris-paused; }
-
-
-/* ─────────────────────────────────────────────
-   IDLE INHIBITOR
-   ───────────────────────────────────────────── */
-#idle_inhibitor { background: @idle-inhibitor; }
-#idle_inhibitor.activated { background: @idle-inhibitor-activated; }
-#idle_inhibitor.deactivated { background: @idle-inhibitor-deactivated; }
-
-
-/* ─────────────────────────────────────────────
-   BLUETOOTH
-   ───────────────────────────────────────────── */
-#bluetooth { background: @bluetooth; }
-#bluetooth.on { background: @bluetooth-on; }
-#bluetooth.off { background: @bluetooth-off; }
-#bluetooth.connected { background: @bluetooth-connected; }
-#bluetooth.disabled { background: @bluetooth-disabled; }
-#bluetooth.discoverable { background: @bluetooth-discoverable; }
-#bluetooth.discovering { background: @bluetooth-discovering; }
-#bluetooth.pairable { background: @bluetooth-pairable; }
-#bluetooth.no-controller { background: @bluetooth-no-controller; }
-
-
-/* BUG FIX (was typo in original) */
-#bluetooth.discovering {
-  /* fixed: @bluetooth-discoverind → @bluetooth-discovering */
+  padding: 0px 30px 0px 30px;
+  border-radius: 0px 0px 15px 15px;
 }
 
+tooltip {
+  color: floralwhite;
+  background: @window-bg;
 
-/* ─────────────────────────────────────────────
-   MEMORY
-   ───────────────────────────────────────────── */
-#memory { background: @memory; }
-#memory.warning { background: @memory-warning; }
-#memory.critical { background: @memory-critical; }
-
-
-/* ─────────────────────────────────────────────
-   TASKBAR
-   ───────────────────────────────────────────── */
-#taskbar {
-  padding: 0px 2px;
-  border-radius: 20px;
-
-  font-size: 12pt;
+  border-radius: 5px;
 }
 
-#taskbar button:not(.active) {
-  color:      @taskbar-label-not-active;
-  /*background: @taskbar;*/
-
-  margin: 3px 4px;
-  /*padding: 0px 5px;*/
-  border-radius: 20px;
-
-  transition: all 0.2s ease-in-out;
+tooltip > box {
+  padding: 0px 10px;
 }
 
+menu {
+  color: floralwhite;
+  background: @window-bg;
+
+  padding: 4px;
+  border-radius: 5px;
+}
+menuitem {
+  background: @menuitem;
+
+  margin: 2px 0px;
+  padding: 3px 5px;
+  border-radius: 2px;
+}
+
+menuitem:hover { color: @window-bg; background: @menuitem-hover; }
+
+
+#workspaces,
+#network,
+#wireplumber.sink,
+#battery {
+  margin: 2px 0.5px 3px 4px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 3px 0px 0px 3px;
+}
+
+#taskbar,
+#bluetooth,
+#wireplumber.source,
+#memory {
+  margin: 2px 4px 3px 0.5px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+#backlight {
+  margin: 2px 0.5px 3px 0.5px;
+  padding: 0px 10px 0px 10px;
+  border-radius: 0px;
+}
+
+#idle_inhibitor,
+#clock,
+#custom-session {
+  margin: 2px 4px 3px 4px;
+  padding: 0px 10px;
+  border-radius: 3px;
+}
+
+#clock {background: @clock}
+
+#network.ethernet { background: @net-ethernet; }
+#network.wifi { background: @net-wifi; }
+#network.linked { background: @net-linked; }
+#network.disconnected { background: @net-disconnected; }
+#network.disabled { background: @net-disabled; }
+
+#bluetooth.on { background: @blue-on; }
+#bluetooth.connected { background: @blue-connected; }
+#bluetooth.connected.battery { background: @blue-connected; }
+#bluetooth.off { background: @blue-off; }
+#bluetooth.disabled { background: @blue-disabled; }
+
+#battery.discharging { background: @bat-discharging; }
+#battery.discharging.warning { background: @bat-warning; }
+#battery.discharging.critical { background: @bat-critical; }
+#battery.charging { background: @bat-plugged; }
+#battery.plugged { background: @bat-plugged; }
+#battery.full.charging { background: @bat-plugged; }
+#battery.full:not(.charging) { background: @bat-full; }
+
+#taskbar { background: @taskbar; }
 #taskbar button.active {
-  color:        @taskbar-label-active;
-  /*background: @taskbar-active;*/
-
-  margin: 3px 4px;
-  /*padding: 0px 5px;*/
-  border-radius: 20px;
-
-  transition: all 0.2s ease-in-out;
+  color: @task-active; background: @window-bg;
+  padding: 0px 8px; margin: 0px 4px;
+  transition: all 100ms ease-in-out;
+}
+#taskbar button:not(.active) {
+  color: @task-inactive;
+  padding: 0px 4px; transition: all 100ms ease-in-out;
 }
 
-
-/* ─────────────────────────────────────────────
-   WORKSPACES
-   ───────────────────────────────────────────── */
-#workspaces {
-  background: @workspace;
-  font-size: 7pt;
-
-  margin: 3px 0px;
-  padding: 0px 5px;
-  border-radius: 20px;
-}
-
+#workspaces { background: @workspace; font-size: 0; }
 #workspaces button.active label,
 #workspaces button.focused label {
-  color: @background;
-  background: @workspaces-focused;
-
-  margin: 3px 2px;
-  padding: 0px 12px;
+  background: @workspace-active;
+  margin: 3px 3px;
+  padding: 0px 10px;
   border-radius: 20px;
-
-  transition: all 0.2s ease-in-out;
+  transition: all 100ms ease-in-out;
 }
-
 #workspaces button:not(.focused) label,
 #workspaces button.empty:not(.focused) label {
-  color: @workspaces-not-focused;
-  background: @workspaces-not-focused;
-
-  margin: 3px 2px;
-  padding: 0px 4px;
+  background: @workspace-inactive;
+  margin: 4px 1px;
+  padding: 0px 5px;
   border-radius: 20px;
-
-  transition: all 0.2s ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
+#wireplumber.sink { background: @audio-sink; }
+#wireplumber.sink.muted { background: @audio-muted; }
+#wireplumber.source { background: @audio-source; }
+#wireplumber.source.muted { background: @audio-muted; }
 
-/* ─────────────────────────────────────────────
-   SAFE HOVER (Waybar-compatible)
-   ───────────────────────────────────────────── */
+#backlight { background: @backlight; }
 
-#network:hover,
-#battery:hover,
-#clock:hover,
-#window:hover,
-#pulseaudio:hover,
-#backlight:hover,
-#mpris.playing:hover,
-#mpris.paused:hover,
-#idle_inhibitor:hover,
-#bluetooth:hover,
-#memory:hover,
-#custom-usrname:hover {
-  /*background: @workspaces-not-focused;*/
+#memory { background: @mem; }
+#memory.warning { background: @mem-warning; }
+#memory.critical { background: @mem-critical; }
 
-  padding: 0px 15px;
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
-}
+#idle_inhibitor.activated { background: @idle-on; }
+#idle_inhibitor.deactivated { background: @idle-off; }
+
+#custom-session { background: @session }

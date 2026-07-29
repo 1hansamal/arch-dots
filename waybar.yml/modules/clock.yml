@@ -1,0 +1,20 @@
+clock:
+  interval: null
+  
+  timezone: "Asia/Colombo"
+  timezones: null
+
+  format: "{:%I : %H <span rise='1pt'><small>%p</small></span>}"
+  format-alt: "<small>{:%A, %d %b %Y}</small>"
+  timezone-tooltip-format: null
+
+  max-length: null
+  rotate: 0
+  expand: false
+
+  tooltip: false
+  tooltip-format: null
+
+  menu: null
+  menu-file: null
+  menu-actions: null
