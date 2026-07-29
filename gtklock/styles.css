@@ -1,0 +1,66 @@
+window {
+   background-image: url("/home/ihansamal/.wallpapers/wallhaven-ml3oqk_1920x1080.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: black;
+}
+
+#clock-label {
+    font-family: "Montserrat Black", sans-serif;
+    font-size: 182px;
+    font-weight: 900;
+
+    color: #caf0f8;
+
+    /*margin-bottom: -20px;*/
+
+    text-shadow: 0 2px 18px #000000;
+}
+
+#date-label {
+    font-family: "Google Sans Flex", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+
+    text-shadow: 0 2px 18px #000000;
+
+    color: #e5e5e5;
+
+    margin-bottom: -10px;
+}
+
+#window-box {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+#input-label {
+   color: transparent;
+   font-family: "Google Sans Flex", sans-serif;
+   font-size: 10px;
+   font-weight: 500;
+
+   margin-top:    100px;
+}
+
+#input-field {
+   margin-top:    100px;
+}
+
+#input-field:focus {
+}
+
+#unlock-button {
+/*    opacity: 0;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 0;
+    border: none;*/
+}
