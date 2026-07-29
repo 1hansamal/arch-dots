@@ -1,0 +1,259 @@
+{
+  "clock": {
+    "format": "󰥔 {:%I : %M <span font_scale=\"superscript\" rise=\"1.5pt\">%p</span>}",
+    "format-alt": " <span font_scale=\"superscript\" rise=\"1.5pt\">{:%A, %d %b %Y}</span>",
+    "tooltip": false
+  },
+
+  "niri/workspaces": {
+    "all-outputs": false,
+    "format": null,
+    "hide-empty": true
+  },
+
+  "network": {
+    "interval": 60,
+    "family": "ipv4",
+
+    "format": "󰤩",
+    "format-ethernet": "{icon}",
+    "format-wifi": "{icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{essid}</span>",
+    "format-linked": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon} <span font_scale=\"superscript\" rise=\"1.5pt\">Flight Mode</span>",
+
+    "format-icons": {
+      "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "ethernet": "",
+      "linked": "",
+      "disconnected": "󰤭",
+      "disabled": ""
+    },
+
+    "max-length": 30,
+
+    "on-click-right": "footclient wifitui",
+
+    "tooltip": true
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "AC",
+
+    "full-at": 100,
+    "interval": 60,
+
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+
+    "format": "{icon} {capacity}",
+    "format-charging": " {capacity}",
+    "format-plugged": " <span font_scale=\"superscript\" rise=\"1.5pt\">Plugged</span>",
+    "format-full": "󱟢 <span font_scale=\"superscript\" rise=\"1.5pt\">Full</span>",
+    "format-discharging": "{icon} {capacity}",
+    "format-discharging-warning": "󰁻 <span font_scale=\"superscript\" rise=\"1.5pt\">Low Battery!</span>",
+    "format-discharging-critical": "󰂎 <span font_scale=\"superscript\" rise=\"1.5pt\">Charge Now!!</span>",
+
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-time": "{H}h {M}min",
+
+    "events": {
+      "on-discharging-warning": "~/.config/notifications/scripts/battery.sh warning",
+      "on-discharging-critical": "~/.config/notifications/scripts/battery.sh critical",
+      "on-charging-100": "~/.config/notifications/scripts/battery.sh full"
+    }
+  },
+
+  "pulseaudio#sink": {
+    "format": "{icon} {volume}",
+    "format-bluetooth": "{icon} {volume}",
+    "format-muted": "",
+
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "󰏳",
+      "portable": "󰦢",
+      "car": "󰄍",
+      "hdmi": "󰡁",
+      "hifi": "󰗅",
+      "default": ["", ""]
+    },
+
+    "max-volume": 100,
+
+    "on-click": "~/.config/usrscripts/volume.sh output mute",
+    "on-click-right": "pavucontrol",
+
+    "on-scroll-up": "~/.config/usrscripts/volume.sh output raise 2",
+    "on-scroll-down": "~/.config/usrscripts/volume.sh output lower 2",
+
+    "smooth-scrolling-threshold": 1,
+    "tooltip": true,
+    "tooltip-format": "{desc}"
+  },
+
+  "pulseaudio#source": {
+    "format": "{format_source}",
+    "format-source": " {volume}",
+    "format-source-muted": "",
+
+    "on-click": "~/.config/usrscripts/volume.sh input mute",
+    "on-click-right": "pavucontrol",
+
+    "on-scroll-up": "~/.config/usrscripts/volume.sh input raise 2",
+    "on-scroll-down": "~/.config/usrscripts/volume.sh input lower 2",
+
+    "scroll-step": "2",
+    "smooth-scrolling-threshold": 2,
+    "tooltip-format": "{desc}"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}",
+    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+
+    "on-click": "sunsetr -b",
+    "on-click-right": "sunsetr stop",
+
+    "on-scroll-up": "~/.config/usrscripts/backlight.sh up",
+    "on-scroll-down": "~/.config/usrscripts/backlight.sh down",
+
+    "tooltip": false
+  },
+
+  "mpris": {
+    "player": "playerctld",
+
+    "format": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-playing": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-paused": "{status_icon} <span font_scale=\"superscript\" rise=\"1.5pt\">{dynamic}</span>",
+    "format-stopped": "󰲸",
+
+    "tooltip-format": "{player} - {status}\n󰲸 {artist} - {title}",
+    "tooltip-format-playing": "{player}\n󰲸 {artist} - {title}",
+    "tooltip-format-paused": "{player} (paused)\n󰲸 {artist} - {title}",
+    "tooltip-format-stopped": "No media playing",
+
+    "on-click": "playerctl play-pause",
+
+    "status-icons": {
+      "playing": "󰲸",
+      "paused": "",
+      "stopped": ""
+    },
+
+    "dynamic-order": ["title", "artist"],
+    "dynamic-importance-order": ["title", "artist"],
+    "dynamic-len": 40,
+    "dynamic-separator": " / ",
+
+    "title-len": 25,
+    "artist-len": 15,
+    "ellipsis": ""
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " <span font_scale=\"superscript\" rise=\"1.5pt\">No Sleep</span>",
+      "deactivated": ""
+    },
+
+    "tooltip": true,
+    "tooltip-format-activated": "Idle inhibitor active",
+    "tooltip-format-deactivated": "Idle inhibitor inactive",
+
+    "timeout": 30
+  },
+
+  "bluetooth": {
+    "format": "{status}",
+    "format-off": "󰂲 <span font_scale=\"superscript\" rise=\"1.5pt\">Off</span>",
+    "format-on": "󰂯 <span font_scale=\"superscript\" rise=\"1.5pt\">On</span>",
+    "format-connected": "󰂱 <span font_scale=\"superscript\" rise=\"1.5pt\">{device_alias}</span>",
+    "format-connected-battery": "󰂱 <span font_scale=\"superscript\" rise=\"1.5pt\">{device_alias} / 󰥈 {device_battery_percentage}%</span>",
+    "format-no-controller": "<span font_scale=\"superscript\" rise=\"1.5pt\">No Controller</span>",
+
+    "max-length": 20,
+
+    "on-click": "~/.config/usrscripts/bluetooth.sh",
+    "on-click-right": "footclient bluetui",
+
+    "tooltip": true,
+    "tooltip-format": "{controller_alias}\t{num_connections} connected",
+    "tooltip-format-disabled": "Bluetooth disabled",
+    "tooltip-format-off": "Bluetooth off",
+    "tooltip-format-on": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\t{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-connected-battery": "{controller_alias}\t{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}t{device_battery_percentage}%"
+  },
+
+  "memory": {
+    "interval": 60,
+
+    "format": "󰍛 {percentage}",
+    "format-warning": "󰍛 {percentage} <span font_scale=\"superscript\" rise=\"1.5pt\">Warning!</span>",
+    "format-critical": "󰍛 {percentage} <span font_scale=\"superscript\" rise=\"1.5pt\">Critical!!</span>",
+
+    "states": {
+      "warning": 70,
+      "critical": 90
+    },
+
+    "on-click-right": "footclient btop",
+
+    "tooltip": true,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
+  },
+
+  "wlr/taskbar": {
+    "sort-by-app-id": true,
+    "markup": true,
+    "format": "{app_id}",
+
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+
+    "app_ids-mapping": {
+      "google-chrome": "",
+      "chromium": "",
+      "sublime_text": "",
+      "foot": "",
+      "footclient": "",
+      "waybar": "󰰮",
+      "nemo": "",
+      "rstudio": "",
+      "code": "",
+      "vlc": "󰕼",
+      "texstudio": "",
+      "org.pwmt.zathura": "",
+      "xarchiver": "",
+      "positron": "",
+      "codium": "",
+      "sublime_merge": "",
+    }
+  },
+
+  "custom/div": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/div2": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/usrname": {
+    "format": "  <span font_scale=\"superscript\" rise=\"1.5pt\">iHansamal</span>",
+    "tooltip": false,
+    "on-click-right": "~/.config/usrscripts/session_manager.sh"
+  }
+}
