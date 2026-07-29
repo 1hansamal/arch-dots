@@ -12,17 +12,10 @@ notify_summary=
 case $AC_online in
 	0)
 		notify_body='Charger Disconnected'
-		notify_summary="battery is discharging, current level: $BAT_level"
 		;;
 	1)
 		notify_body='Charger Connected'
-		notify_summary="battery is charging, current level: $BAT_level"
 		;;
 esac
 
-notify-send --app-name=power --replace-id=99905 "$notify_body" "$notify_summary"
-
-[ $BAT_level -lt 20 ] && {
-	notify-send --app-name=battery --replace-id=99906 \
-		"Low Battery" "battery charge is low ($BAT_level remaining), connect your charger"	
-}
+notify-send --app-name=power --replace-id=99905 "$notify_body"

@@ -17,7 +17,7 @@ chosen=$(printf "%s\n" "$options" | mode_menu)
 
 case $chosen in
     0)
-        hyprlock -q & 
+        gtklock -d
         ;;
     1)
         niri msg action quit
