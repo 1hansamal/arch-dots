@@ -7,26 +7,46 @@ wireplumber#sink:
   format-bluetooth-muted: "ew"
   format-icons: [, ]
 
-  scroll-step: 0.5
-  on-click: wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+  smooth-scrolling-threshold: 0.2
+
+  on-click: ~/.config/usrscripts/volume.sh sink mute
   on-click-middle: helvum
   on-click-right: footclient -a wiremix wiremix
+
+  on-scroll-up: ~/.config/usrscripts/volume.sh sink raise
+  on-scroll-down: ~/.config/usrscripts/volume.sh sink lower
 
   tooltip: true
   tooltip-format: "{node_name}"
 
-# custom/sound_device:
-  # exec: ~/.config/waybar/scripts/sound_device.sh
-  # exec-if: null
+mpris:
+  player: playerctld
+  # interval: 30
 
-  # hide-empty-text: true
-  # return-type: json
+  format: |-
+    {player}  {status_icon}
+  format-playing: |-
+    {player_icon}  {status_icon}
+  format-paused: |-
+    {player_icon}  {status_icon}
+  format-stopped: |-
+    {status_icon}
 
-  # interval: null
-  # signal: 8
+  dynamic-order: [title, artist, album]
 
-  # format: "{text}"
-  # tooltip: false
+  player-icons:
+    chromium: 
+    mpv: 
+  
+  status-icons:
+    playing: 
+    paused: 
+    stopped: 󰌳
+  
+  tooltip: true
+  tooltip-format: |-
+    {dynamic}
+
 
 wireplumber#source:
   node-type: Audio/Source
@@ -34,10 +54,13 @@ wireplumber#source:
   format: " {volume}"
   format-muted: " {volume}"
 
-  scroll-step: 0.5
-  on-click: wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+  smooth-scrolling-threshold: 0.2
+  on-click: ~/.config/usrscripts/volume.sh source mute
   on-click-middle: helvum
   on-click-right: footclient -a wiremix wiremix
+
+  on-scroll-up: ~/.config/usrscripts/volume.sh source raise
+  on-scroll-down: ~/.config/usrscripts/volume.sh source lower
 
   tooltip: true
   tooltip-format: "{node_name}"

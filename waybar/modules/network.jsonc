@@ -28,7 +28,7 @@
     "justify": "center",
     "max-length": 15,
     "expand": false,
-    "on-click-right": "footclient -a wifitui wifitui",
+    "on-click-right": "footclient -a wifitui -T 'wifitui: WiFi Manager' wifitui",
     "smooth-scrolling-threshold": null,
     "tooltip": true,
     "tooltip-format": "{essid}  󰒢 {signalStrength}%   {frequency}GHz  󰩟 {ipaddr}",

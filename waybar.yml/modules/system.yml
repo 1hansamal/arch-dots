@@ -17,7 +17,7 @@ memory:
   max-length: null
   min-length: null
   
-  on-double-click: footclient -a btop btop
+  on-click-right: footclient -a btop btop
 
   tooltip: false
   tooltip-format: null
@@ -39,8 +39,8 @@ backlight:
 idle_inhibitor:
   format: "{icon}"
   format-icons:
-    activated: idle 
-    deactivated: idle 
+    activated:  idle off
+    deactivated: 
   
   tooltip: false
   timeout: 60

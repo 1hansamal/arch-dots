@@ -46,7 +46,8 @@ menuitem:hover { color: @window-bg; background: @menuitem-hover; }
 #workspaces,
 #network,
 #wireplumber.sink,
-#battery {
+#battery,
+#idle_inhibitor {
   margin: 2px 0.5px 3px 4px;
   padding: 0px 10px 0px 10px;
   border-radius: 3px 0px 0px 3px;
@@ -55,26 +56,27 @@ menuitem:hover { color: @window-bg; background: @menuitem-hover; }
 #taskbar,
 #bluetooth,
 #wireplumber.source,
-#memory {
+#memory,
+#custom-session {
   margin: 2px 4px 3px 0.5px;
   padding: 0px 10px 0px 10px;
   border-radius: 0px 3px 3px 0px;
 }
 
+#mpris,
 #backlight {
   margin: 2px 0.5px 3px 0.5px;
   padding: 0px 10px 0px 10px;
   border-radius: 0px;
 }
 
-#idle_inhibitor,
-#clock,
-#custom-session {
+#clock {
   margin: 2px 4px 3px 4px;
   padding: 0px 10px;
   border-radius: 3px;
 }
 
+#mpris,
 #clock {background: @clock}
 
 #network.ethernet { background: @net-ethernet; }

@@ -27,6 +27,7 @@
     "network",
     "bluetooth",
     "wireplumber#sink",
+    "mpris",
     "wireplumber#source",
     "battery",
     "backlight",
