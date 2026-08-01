@@ -1,101 +1,49 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
-min=0
-max=100
+STEP=4
+NOTIFY_ID=99902
 
-dev=
-action=
-value=
+case "$1" in
+    sink)
+        DEV="@DEFAULT_AUDIO_SINK@"
+        NAME="󰕾 Speakers" ;;
+    source)
+        DEV="@DEFAULT_AUDIO_SOURCE@"
+        NAME="󰍬 Microphone" ;;
+    *)
+        echo "Usage: $0 {sink|source} {raise|lower|mute}"
+        exit 1 ;;
+esac
 
-device=
-dev_state=
-dev_volume=
-dev_icon=
-dev_name=
+case "$2" in
+    raise)
+        wpctl set-volume -l 1.0 "$DEV" "${STEP}%+" ;;
+    lower)
+        wpctl set-volume "$DEV" "${STEP}%-" ;;
+    mute)
+        wpctl set-mute "$DEV" toggle ;;
+    *)
+        echo "Usage: $0 {sink|source} {raise|lower|mute}"
+        exit 1 ;;
+esac
 
-pactl() {
-	command pactl "$1" "$device" "${@:2}"
-}
+status=$(wpctl get-volume "$DEV")
+volume=$(awk '{printf "%.0f", $2 * 100}' <<<"$status")
 
-get_state() {
-	local state
-	state=$(pactl "get-$dev_state" | awk '{print $2}')
+if [[ $status == *"[MUTED]"* ]]; then
+    # icon="audio-volume-muted-symbolic"
+    text="Muted"
+else
+    # if (( volume == 0 )); then
+    #     icon="audio-volume-muted-symbolic"
+    # elif (( volume < 35 )); then
+    #     icon="audio-volume-low-symbolic"
+    # elif (( volume < 70 )); then
+    #     icon="audio-volume-medium-symbolic"
+    # else
+    #     icon="audio-volume-high-symbolic"
+    # fi
+    text=$(awk '{printf "%3.0f", $1}' <<<"$volume")
+fi
 
-	case $state in
-		'yes') printf "muted" ;;
-		'no')  printf "unmuted" ;;
-	esac
-}
-
-get_volume() {
-	pactl "get-$dev_volume" | grep -Po '\d+(?=%)' | head -n 1
-}
-
-set_state () 
-{
-	local mute_state
-
-	pactl "set-$dev_state" toggle
-
-	notify_state=$(get_state)
-
-	notify-send --app-name=pactl --replace-id=99902 "$dev_name: $notify_state"
-}
-
-set_volume () 
-{
-	local new_level
-	local curr_level
-
-	curr_level=$(get_volume)
-
-	case $action in
-		'raise')
-			new_level=$((curr_level + value))
-			((new_level > max)) && new_level=$max
-			;;
-		'lower')
-			new_level=$((curr_level - value))
-			((new_level < min)) && new_level=$min
-			;;
-	esac
-
-	pactl "set-$dev_volume" "$new_level%"
-
-	notify-send --app-name=pactl --replace-id=99902 -h int:value:$new_level "$dev_name: $new_level %"
-}
-
-main () 
-{
-	dev=$1
-	action=$2
-	value=$3
-
-	case $dev in
-		'input')
-			device="@DEFAULT_SOURCE@"
-			dev_state="source-mute"
-			dev_volume="source-volume"
-			dev_icon="mic-volume"
-			dev_name="Microphone"
-			;;
-		'output')
-			device="@DEFAULT_SINK@"
-			dev_state="sink-mute"
-			dev_volume="sink-volume"
-			dev_icon="audio-volume"
-			dev_name="Speakers"
-			;;
-	esac
-
-	case $action in
-		'mute')
-			set_state 
-			;;
-		'raise' | 'lower')
-			set_volume 
-			;;
-	esac
-}
-
-main $@
+notify-send --app-name=wpctl --replace-id="$NOTIFY_ID" -h "int:value:$volume" "$NAME: $text%"
